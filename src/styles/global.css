@@ -236,19 +236,12 @@ li {
   max-width: 48rem;
 }
 
-.hero-positioning {
-  max-width: 46rem;
-  margin: 0.45rem 0 0;
-  font-size: clamp(1.08rem, 2vw, 1.3rem);
-  line-height: 1.45;
-  color: var(--color-accent-strong);
-}
-
 .hero-lead {
-  max-width: 62ch;
-  margin: 0.9rem 0 0;
-  font-size: 1rem;
-  color: var(--color-text-soft);
+  max-width: 48rem;
+  margin: 0.6rem 0 0;
+  font-size: clamp(1.08rem, 2vw, 1.28rem);
+  line-height: 1.5;
+  color: var(--color-accent-strong);
 }
 
 .section-intro {
@@ -406,12 +399,6 @@ li {
 .skills-grid {
   display: grid;
   gap: 1rem;
-}
-
-.value-prologue {
-  max-width: 72ch;
-  margin: 0 0 1.15rem;
-  color: var(--color-text-soft);
 }
 
 .profile-section h2,

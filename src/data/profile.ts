@@ -2,11 +2,9 @@ export interface Profile {
   name: string;
   title: string;
   email: string;
-  positioning: string;
   heroSummary: string;
   intro: string;
   valueTitle: string;
-  valueIntro: string;
   strengths: Array<{
     title: string;
     description: string;
@@ -17,37 +15,28 @@ export interface Profile {
 
 export const profile: Profile = {
   name: "Fabien Rouget",
-  title: "Ingénieur logiciel C#",
+  title: "Ingénieur logiciel • Technical lead • C#",
   email: "freelance@fabien-rouget.fr",
-  positioning:
-    "Leader technique spécialisé en backend C#, API REST, architecture applicative et .NET 8.",
   heroSummary:
-    "J’accompagne la conception et l’évolution de services backend fiables, de flux événementiels et de processus ETL, en lien étroit avec les enjeux produit et métier.",
+    "Je conçois et pilote des systèmes backend fiables à forte volumétrie, et j’accompagne les équipes dans les décisions techniques clés.",
   intro:
-    "Ingénieur logiciel et leader technique indépendant basé à Bordeaux, j’ai acquis plus de 8 ans d'expérience dans le développement et la conception de solutions informatiques innovantes. Spécialiste du backend en C#, j’ai notamment intégré et piloté des projets exploitant des architectures microservices, des API REST performantes, des flux événementiels et des processus ETL, aussi bien en environnements on-premise que cloud.",
+    "J’accompagne des équipes et des produits sur des sujets de backend, d’architecture et d’intégration, de la conception jusqu’à la mise en production et à l’amélioration continue.",
   valueTitle: "Ce que j’apporte",
-  valueIntro:
-    "Une intervention à la fois technique, structurante et orientée livraison, pour faire avancer un produit, une équipe et une architecture.",
   strengths: [
     {
-      title: "Expertise technique",
+      title: "Backend C#",
       description:
-        "Une expérience et une maîtrise des technologies actuelles pour concevoir des solutions fiables et évolutives, incluant la mise en place de systèmes de monitoring et de testing.",
+        "Conception et mise en production d’API C#/.NET et de systèmes event-driven performants et maintenables, avec une forte exigence de qualité et de robustesse.",
     },
     {
-      title: "Vision proactive",
+      title: "Architecture et qualité logicielle",
       description:
-        "Anticiper les défis technologiques pour transformer des idées en projets concrets, alignés avec les objectifs commerciaux.",
+        "Mise en place d’architectures évolutives, avec un fort focus sur la qualité logicielle, les tests, l’observabilité et la performance.",
     },
     {
-      title: "Accompagnement fonctionnel",
+      title: "Cadrage et accompagnement technique",
       description:
-        "Soutien dans la définition et la mise en œuvre des besoins fonctionnels pour garantir des solutions pertinentes.",
-    },
-    {
-      title: "Leadership collaboratif",
-      description:
-        "Management technique favorisant la coopération et le développement des compétences, assurant le succès à long terme des projets.",
+        "Cadrage technique des projets, arbitrage des choix structurants, accompagnement des équipes et sécurisation des livraisons.",
     },
   ],
   personalNotesTitle: "En dehors du code",

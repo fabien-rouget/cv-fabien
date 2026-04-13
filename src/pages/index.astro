@@ -25,14 +25,7 @@ const navigationItems = [
     <TopNav items={navigationItems} />
     <Hero profile={profile} contactLinks={contactLinks} />
 
-    <Section
-      id="presentation"
-      kicker="Valeur"
-      title={profile.valueTitle}
-      intro={profile.valueIntro}
-    >
-      <p class="value-prologue">{profile.intro}</p>
-
+    <Section id="presentation" kicker="Valeur" title={profile.valueTitle}>
       <div class="strength-grid">
         {profile.strengths.map((strength) => (
           <article class="strength-card">
