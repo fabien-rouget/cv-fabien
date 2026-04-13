@@ -8,23 +8,28 @@ interface Props {
 }
 
 const { contactLinks, profile } = Astro.props;
+const getActionLabel = (link: ContactLink) => (link.label === "Email" ? "Me contacter" : link.value);
+const getAriaLabel = (link: ContactLink) =>
+  link.label === "Email" ? `Me contacter par email à ${link.value}` : link.value;
 ---
 
 <header class="hero" id="top">
   <div class="hero-copy">
     <h1>{profile.name}</h1>
     <p class="hero-title">{profile.title}</p>
-    <p class="hero-lead">{profile.intro}</p>
+    <p class="hero-positioning">{profile.positioning}</p>
+    <p class="hero-lead">{profile.heroSummary}</p>
 
     <div class="hero-actions">
       {contactLinks.map((link) => (
         <a
           class:list={["button", link.external ? "button-secondary" : "button-primary"]}
           href={link.href}
+          aria-label={getAriaLabel(link)}
           rel={link.external ? "noreferrer" : undefined}
           target={link.external ? "_blank" : undefined}
         >
-          {link.value}
+          {getActionLabel(link)}
         </a>
       ))}
     </div>

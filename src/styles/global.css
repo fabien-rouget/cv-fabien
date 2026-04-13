@@ -230,11 +230,25 @@ li {
   color: var(--color-accent);
 }
 
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 48rem;
+}
+
+.hero-positioning {
+  max-width: 46rem;
+  margin: 0.45rem 0 0;
+  font-size: clamp(1.08rem, 2vw, 1.3rem);
+  line-height: 1.45;
+  color: var(--color-accent-strong);
+}
+
 .hero-lead {
-  max-width: 64ch;
-  margin: 1rem 0 0;
-  font-size: 1.02rem;
-  color: var(--color-text);
+  max-width: 62ch;
+  margin: 0.9rem 0 0;
+  font-size: 1rem;
+  color: var(--color-text-soft);
 }
 
 .section-intro {
@@ -299,19 +313,18 @@ li {
   background: var(--color-surface-muted);
 }
 
-.profile-section,
-#infos,
+#presentation,
 #experiences,
 #competences,
 #formations {
   border-color: rgba(40, 59, 79, 0.09);
 }
 
-.profile-section::before,
-#infos::before,
+#presentation::before,
 #experiences::before,
 #competences::before,
-#formations::before {
+#formations::before,
+.compact-aside::before {
   content: "";
   position: absolute;
   top: 0;
@@ -320,12 +333,8 @@ li {
   height: 0.4rem;
 }
 
-.profile-section::before {
+#presentation::before {
   background: linear-gradient(90deg, #4d8a87, #86b9c5);
-}
-
-#infos::before {
-  background: linear-gradient(90deg, #dc8f72, #ebc2b2);
 }
 
 #experiences::before {
@@ -338,6 +347,10 @@ li {
 
 #formations::before {
   background: linear-gradient(90deg, #283b4f, #86b9c5);
+}
+
+.compact-aside::before {
+  background: linear-gradient(90deg, #dc8f72, #e6c0ae);
 }
 
 .bullet-list {
@@ -393,6 +406,12 @@ li {
 .skills-grid {
   display: grid;
   gap: 1rem;
+}
+
+.value-prologue {
+  max-width: 72ch;
+  margin: 0 0 1.15rem;
+  color: var(--color-text-soft);
 }
 
 .profile-section h2,
@@ -516,12 +535,7 @@ li {
 
 .card-summary {
   margin: 0;
-}
-
-.experience-columns {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(220px, 0.78fr);
-  gap: 0.75rem;
+  color: var(--color-text-soft);
 }
 
 .card-block {
@@ -529,11 +543,6 @@ li {
   border-radius: 1rem;
   background: rgba(255, 255, 255, 0.74);
   border: 1px solid rgba(40, 59, 79, 0.08);
-}
-
-.card-block-accent {
-  background: rgba(240, 248, 247, 0.9);
-  border-color: rgba(77, 138, 135, 0.12);
 }
 
 .card-block h4 {
@@ -545,22 +554,33 @@ li {
   color: var(--color-accent);
 }
 
-.card-block .tag-list {
-  margin-top: 0;
+.experience-support {
+  padding-top: 0.15rem;
+  border-top: 1px solid rgba(40, 59, 79, 0.08);
 }
 
-.card-block-accent .tag {
-  background: rgba(77, 138, 135, 0.15);
-  border-color: rgba(77, 138, 135, 0.2);
+.experience-support h4 {
+  margin: 0;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+}
+
+.experience-support .tag-list {
+  margin-top: 0.75rem;
 }
 
 .skills-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.85rem;
 }
 
 .skill-card {
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 12px 28px rgba(30, 41, 54, 0.05);
+  padding: 1rem 1rem 1.05rem;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 24px rgba(30, 41, 54, 0.04);
 }
 
 .skill-card:nth-child(even) {
@@ -572,28 +592,63 @@ li {
 }
 
 .skill-card h3 {
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
   color: var(--color-accent-strong);
+}
+
+.closing-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.85fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.closing-grid > .section,
+.closing-grid > .compact-aside {
+  margin-bottom: 0;
 }
 
 .education-list {
   display: grid;
-  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
 }
 
 .education-card {
+  padding: 1rem;
   background:
     linear-gradient(180deg, rgba(134, 185, 197, 0.1), rgba(255, 255, 255, 0.84));
 }
 
+.education-card h3 {
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+}
+
+.education-card p {
+  margin-bottom: 0;
+  color: var(--color-text-soft);
+}
+
+.compact-aside {
+  padding: 1.5rem;
+}
+
+.compact-heading {
+  margin-bottom: 1rem;
+}
+
+.compact-aside .bullet-list {
+  gap: 0.55rem;
+}
+
 @media (max-width: 960px) {
-  .hero,
-  .strength-grid,
-  .skills-grid {
+  .strength-grid {
     grid-template-columns: 1fr;
   }
 
-  .experience-columns {
+  .closing-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -666,5 +721,13 @@ li {
 
   .experience-main {
     gap: 0.9rem;
+  }
+
+  .education-list {
+    grid-template-columns: 1fr;
+  }
+
+  .compact-aside {
+    padding: 1.35rem;
   }
 }

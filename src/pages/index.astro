@@ -13,7 +13,7 @@ import { skillCategories } from "../data/skills";
 
 const seoDescription = profile.intro;
 const navigationItems = [
-  { href: "#top", label: "Présentation" },
+  { href: "#top", label: "Profil" },
   { href: "#experiences", label: "Expériences" },
   { href: "#competences", label: "Compétences" },
   { href: "#formations", label: "Formations" },
@@ -25,8 +25,14 @@ const navigationItems = [
     <TopNav items={navigationItems} />
     <Hero profile={profile} contactLinks={contactLinks} />
 
-    <section class="section profile-section" id="presentation" aria-labelledby="presentation-title">
-      <h2 id="presentation-title">{profile.leversTitle}</h2>
+    <Section
+      id="presentation"
+      kicker="Valeur"
+      title={profile.valueTitle}
+      intro={profile.valueIntro}
+    >
+      <p class="value-prologue">{profile.intro}</p>
+
       <div class="strength-grid">
         {profile.strengths.map((strength) => (
           <article class="strength-card">
@@ -35,27 +41,32 @@ const navigationItems = [
           </article>
         ))}
       </div>
-    </section>
-
-    <Section id="infos" title={profile.personalNotesTitle}>
-      <ul class="bullet-list">
-        {profile.personalNotes.map((note) => <li>{note}</li>)}
-      </ul>
     </Section>
 
-    <Section id="experiences" title="Expériences">
+    <Section
+      id="experiences"
+      kicker="Parcours"
+      title="Expériences"
+      intro="Les missions les plus représentatives de mon parcours, avec le contexte, les réalisations clés et les technologies mobilisées."
+    >
       <div class="experience-list">
         {experiences.map((experience) => <ExperienceCard experience={experience} />)}
       </div>
     </Section>
 
-    <Section id="competences" title="Compétences">
+    <Section
+      id="competences"
+      kicker="Appui"
+      title="Compétences"
+      intro="Un socle technique mobilisé en appui des missions, de l’architecture et de la livraison."
+    >
       <div class="skills-grid">
         {skillCategories.map((category) => <SkillGroup category={category} />)}
       </div>
     </Section>
 
-    <Section id="formations" title="Formations">
+    <div class="closing-grid">
+      <Section id="formations" kicker="Formation" title="Formations">
         <div class="education-list">
           {educationItems.map((item) => (
             <article class="education-card">
@@ -65,6 +76,18 @@ const navigationItems = [
           ))}
         </div>
       </Section>
+
+      <aside class="section compact-aside" aria-labelledby="infos-title">
+        <div class="section-heading compact-heading">
+          <p class="section-kicker">Repères</p>
+          <h2 id="infos-title">{profile.personalNotesTitle}</h2>
+        </div>
+
+        <ul class="bullet-list">
+          {profile.personalNotes.map((note) => <li>{note}</li>)}
+        </ul>
+      </aside>
+    </div>
 
   </main>
 </MainLayout>
