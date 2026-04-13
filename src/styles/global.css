@@ -12,6 +12,7 @@
   --radius-medium: 16px;
   --radius-small: 10px;
   --layout-width: 1120px;
+  --sticky-offset: 5.75rem;
 }
 
 * {
@@ -78,10 +79,59 @@ li {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-large);
   box-shadow: var(--shadow-soft);
+  scroll-margin-top: var(--sticky-offset);
 }
 
 .section-heading {
   margin-bottom: 1.5rem;
+}
+
+.page-nav {
+  position: sticky;
+  top: 0.75rem;
+  z-index: 20;
+  margin-bottom: 1rem;
+  padding: 0.6rem;
+  border: 1px solid rgba(217, 225, 234, 0.9);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 12px 30px rgba(16, 24, 40, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.page-nav-list {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  overflow-x: auto;
+  list-style: none;
+  scrollbar-width: none;
+}
+
+.page-nav-list::-webkit-scrollbar {
+  display: none;
+}
+
+.page-nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  color: var(--color-text);
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.page-nav-link:hover,
+.page-nav-link:focus-visible {
+  background: rgba(13, 74, 120, 0.08);
+  border-color: rgba(13, 74, 120, 0.14);
 }
 
 .hero {
@@ -289,6 +339,10 @@ li {
 }
 
 @media (max-width: 720px) {
+  :root {
+    --sticky-offset: 8.5rem;
+  }
+
   .page {
     padding-top: 1rem;
   }
@@ -297,6 +351,28 @@ li {
   .section {
     padding: 1.5rem;
     border-radius: var(--radius-medium);
+  }
+
+  .page-nav {
+    top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 1.25rem;
+  }
+
+  .page-nav-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem;
+    overflow-x: visible;
+  }
+
+  .page-nav-link {
+    width: 100%;
+    min-height: 2.6rem;
+    padding: 0.55rem 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    white-space: normal;
   }
 
   .hero h1 {

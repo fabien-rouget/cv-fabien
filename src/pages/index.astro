@@ -3,6 +3,7 @@ import ExperienceCard from "../components/ExperienceCard.astro";
 import Hero from "../components/Hero.astro";
 import Section from "../components/Section.astro";
 import SkillGroup from "../components/SkillGroup.astro";
+import TopNav from "../components/TopNav.astro";
 import { contactLinks } from "../data/contact";
 import { educationItems } from "../data/education";
 import { experiences } from "../data/experience";
@@ -11,10 +12,17 @@ import { profile } from "../data/profile";
 import { skillCategories } from "../data/skills";
 
 const seoDescription = profile.intro;
+const navigationItems = [
+  { href: "#top", label: "Présentation" },
+  { href: "#experiences", label: "Expériences" },
+  { href: "#competences", label: "Compétences" },
+  { href: "#formations", label: "Formations" },
+];
 ---
 
 <MainLayout title={`${profile.name} - ${profile.title}`} description={seoDescription}>
   <main class="page">
+    <TopNav items={navigationItems} />
     <Hero profile={profile} contactLinks={contactLinks} />
 
     <section class="section profile-section" id="presentation" aria-labelledby="presentation-title">
