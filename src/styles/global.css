@@ -201,15 +201,6 @@ li {
   filter: blur(20px);
 }
 
-.section-kicker {
-  margin: 0 0 0.5rem;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-}
-
 .hero h1,
 .section-heading h2 {
   margin: 0;
@@ -221,6 +212,14 @@ li {
 
 .hero h1 {
   font-size: clamp(2.2rem, 5vw, 3.9rem);
+}
+
+.section-heading h2 {
+  font-family: "Manrope", "Avenir Next", "Helvetica Neue", sans-serif;
+  font-size: clamp(1.35rem, 2.3vw, 1.8rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-accent);
 }
 
 .hero-title {
@@ -327,23 +326,23 @@ li {
 }
 
 #presentation::before {
-  background: linear-gradient(90deg, #4d8a87, #86b9c5);
+  background: linear-gradient(90deg, #d7b248, #f1d77a);
 }
 
 #experiences::before {
-  background: linear-gradient(90deg, #283b4f, #4d8a87);
+  background: linear-gradient(90deg, #b8902e, #e4c457);
 }
 
 #competences::before {
-  background: linear-gradient(90deg, #4d8a87, #dc8f72);
+  background: linear-gradient(90deg, #caa43a, #efd16a);
 }
 
 #formations::before {
-  background: linear-gradient(90deg, #283b4f, #86b9c5);
+  background: linear-gradient(90deg, #b58c2b, #dcc36b);
 }
 
 .compact-aside::before {
-  background: linear-gradient(90deg, #dc8f72, #e6c0ae);
+  background: linear-gradient(90deg, #c79d33, #ecd487);
 }
 
 .bullet-list {

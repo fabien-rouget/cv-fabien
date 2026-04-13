@@ -25,7 +25,7 @@ const navigationItems = [
     <TopNav items={navigationItems} />
     <Hero profile={profile} contactLinks={contactLinks} />
 
-    <Section id="presentation" kicker="Valeur" title={profile.valueTitle}>
+    <Section id="presentation" title={profile.valueTitle}>
       <div class="strength-grid">
         {profile.strengths.map((strength) => (
           <article class="strength-card">
@@ -38,7 +38,6 @@ const navigationItems = [
 
     <Section
       id="experiences"
-      kicker="Parcours"
       title="Expériences"
       intro="Les missions les plus représentatives de mon parcours, avec le contexte, les réalisations clés et les technologies mobilisées."
     >
@@ -49,7 +48,6 @@ const navigationItems = [
 
     <Section
       id="competences"
-      kicker="Appui"
       title="Compétences"
       intro="Un socle technique mobilisé en appui des missions, de l’architecture et de la livraison."
     >
@@ -59,7 +57,7 @@ const navigationItems = [
     </Section>
 
     <div class="closing-grid">
-      <Section id="formations" kicker="Formation" title="Formations">
+      <Section id="formations" title="Formations">
         <div class="education-list">
           {educationItems.map((item) => (
             <article class="education-card">
@@ -72,7 +70,6 @@ const navigationItems = [
 
       <aside class="section compact-aside" aria-labelledby="infos-title">
         <div class="section-heading compact-heading">
-          <p class="section-kicker">Repères</p>
           <h2 id="infos-title">{profile.personalNotesTitle}</h2>
         </div>
 

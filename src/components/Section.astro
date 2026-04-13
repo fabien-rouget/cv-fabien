@@ -3,15 +3,13 @@ interface Props {
   id: string;
   title: string;
   intro?: string;
-  kicker?: string;
 }
 
-const { id, title, intro, kicker } = Astro.props;
+const { id, title, intro } = Astro.props;
 ---
 
 <section class="section" id={id} aria-labelledby={`${id}-title`}>
   <div class="section-heading">
-    {kicker && <p class="section-kicker">{kicker}</p>}
     <h2 id={`${id}-title`}>{title}</h2>
     {intro && <p class="section-intro">{intro}</p>}
   </div>
