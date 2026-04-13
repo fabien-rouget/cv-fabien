@@ -7,9 +7,23 @@ export interface Experience {
 }
 
 export const experiences: Experience[] = [
+    {
+    role: "Software Engineer",
+    details: "Betclic, Bordeaux – de mai 2025 à aujourd’hui",
+    summary:
+      "To complete",
+    achievements: [
+      "To complete",
+      "To complete",
+    ],
+    stack: [
+      "To complete",
+      "To complete",
+    ],
+  },
   {
     role: "Leader technique",
-    details: "Floa, Bordeaux – de mars 2023 à aujourd’hui",
+    details: "Floa, Bordeaux – de mars 2023 à mai 2025",
     summary:
       "Au sein de l’équipe Fraude et Conformité, ma mission est de mettre à disposition, au sein du parcours de souscription à un produit bancaire, différents contrôles nécessaires à la validation d’un dossier pour sa finalisation. À cela s’ajoute la construction d’un ETL permettant l’alimentation et l’exploitation d’une base de données orientée graphe ayant pour but la détection de communautés frauduleuses.",
     achievements: [
