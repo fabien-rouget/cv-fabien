@@ -373,13 +373,14 @@ li {
 }
 
 .tag {
-  padding: 0.4rem 0.8rem;
+  padding: 0.42rem 0.78rem;
   border-radius: 999px;
   border: 1px solid rgba(40, 59, 79, 0.08);
-  background: rgba(77, 138, 135, 0.08);
+  background: rgba(255, 255, 255, 0.9);
   color: var(--color-accent-strong);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 600;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.32);
 }
 
 .strength-grid,
@@ -525,7 +526,8 @@ li {
 }
 
 .card-block-accent {
-  background: linear-gradient(180deg, rgba(134, 185, 197, 0.1), rgba(255, 255, 255, 0.76));
+  background: rgba(240, 248, 247, 0.9);
+  border-color: rgba(77, 138, 135, 0.12);
 }
 
 .card-block h4 {
@@ -537,22 +539,35 @@ li {
   color: var(--color-accent);
 }
 
+.card-block .tag-list {
+  margin-top: 0;
+}
+
+.card-block-accent .tag {
+  background: rgba(77, 138, 135, 0.08);
+  border-color: rgba(77, 138, 135, 0.1);
+}
+
 .skills-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .skill-card {
-  background:
-    linear-gradient(180deg, rgba(220, 143, 114, 0.1), rgba(255, 255, 255, 0.84));
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 12px 28px rgba(30, 41, 54, 0.05);
 }
 
 .skill-card:nth-child(even) {
-  background:
-    linear-gradient(180deg, rgba(134, 185, 197, 0.12), rgba(255, 255, 255, 0.84));
+  background: rgba(255, 255, 255, 0.82);
 }
 
 .skill-card .tag-list {
   margin-top: 0;
+}
+
+.skill-card h3 {
+  margin-bottom: 0.9rem;
+  color: var(--color-accent-strong);
 }
 
 .education-list {

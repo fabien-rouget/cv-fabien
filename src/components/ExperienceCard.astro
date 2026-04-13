@@ -1,5 +1,6 @@
 ---
 import type { Experience } from "../data/experience";
+import TagList from "./TagList.astro";
 
 interface Props {
   experience: Experience;
@@ -34,9 +35,7 @@ const { experience } = Astro.props;
       {experience.stack.length > 0 && (
         <div class="card-block card-block-accent">
           <h4>Techno et outils :</h4>
-          <ul class="bullet-list">
-            {experience.stack.map((item) => <li>{item}</li>)}
-          </ul>
+          <TagList items={experience.stack} />
         </div>
       )}
     </div>
