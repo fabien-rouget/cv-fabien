@@ -1,17 +1,62 @@
 ---
+import ExperienceCard from "../components/ExperienceCard.astro";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import SkillGroup from "../components/SkillGroup.astro";
+import { contactLinks } from "../data/contact";
+import { educationItems } from "../data/education";
+import { experiences } from "../data/experience";
+import MainLayout from "../layouts/MainLayout.astro";
+import { profile } from "../data/profile";
+import { skillCategories } from "../data/skills";
 
+const seoDescription = profile.intro;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title={`${profile.name} - ${profile.title}`} description={seoDescription}>
+  <main class="page">
+    <Hero profile={profile} contactLinks={contactLinks} />
+
+    <section class="section profile-section" id="presentation" aria-labelledby="presentation-title">
+      <h2 id="presentation-title">{profile.leversTitle}</h2>
+      <div class="strength-grid">
+        {profile.strengths.map((strength) => (
+          <article class="strength-card">
+            <h3>{strength.title}</h3>
+            <p>{strength.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <Section id="infos" title={profile.personalNotesTitle}>
+      <ul class="bullet-list">
+        {profile.personalNotes.map((note) => <li>{note}</li>)}
+      </ul>
+    </Section>
+
+    <Section id="experiences" title="💼 Expériences">
+      <div class="experience-list">
+        {experiences.map((experience) => <ExperienceCard experience={experience} />)}
+      </div>
+    </Section>
+
+    <Section id="competences" title="🛠 Compétences">
+      <div class="skills-grid">
+        {skillCategories.map((category) => <SkillGroup category={category} />)}
+      </div>
+    </Section>
+
+    <Section id="formations" title="📚 Formations">
+        <div class="education-list">
+          {educationItems.map((item) => (
+            <article class="education-card">
+              <h3>{item.degree}</h3>
+              <p>{item.details}</p>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+  </main>
+</MainLayout>

@@ -1,24 +1,52 @@
 # build output
 dist/
-# generated types
 .astro/
 
 # dependencies
 node_modules/
 
 # logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-
 # environment variables
 .env
+.env.local
+.env.*.local
 .env.production
 
-# macOS-specific files
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
 
-# jetbrains setting folder
+# IDE
+.vscode/
 .idea/
+
+# cache
+.cache/
+
+# temp files
+*.tmp
+*.temp
+
+# local extraction / preview artifacts
+.quicklook-output/
+tmp-source-cv.pdf
+
+# accidental git metadata copied to the repo root
+/FETCH_HEAD
+/HEAD
+/config
+/description
+/hooks/
+/index
+/info/
+/logs/
+/objects/
+/packed-refs
+/refs/

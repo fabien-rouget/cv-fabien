@@ -1,0 +1,32 @@
+---
+import type { ContactLink } from "../data/contact";
+import type { Profile } from "../data/profile";
+
+interface Props {
+  contactLinks: ContactLink[];
+  profile: Profile;
+}
+
+const { contactLinks, profile } = Astro.props;
+---
+
+<header class="hero">
+  <div class="hero-copy">
+    <h1>{profile.name}</h1>
+    <p class="hero-title">{profile.title}</p>
+    <p class="hero-lead">{profile.intro}</p>
+
+    <div class="hero-actions">
+      {contactLinks.map((link) => (
+        <a
+          class:list={["button", link.external ? "button-secondary" : "button-primary"]}
+          href={link.href}
+          rel={link.external ? "noreferrer" : undefined}
+          target={link.external ? "_blank" : undefined}
+        >
+          {link.value}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>

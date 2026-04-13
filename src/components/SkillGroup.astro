@@ -1,0 +1,15 @@
+---
+import type { SkillCategory } from "../data/skills";
+import TagList from "./TagList.astro";
+
+interface Props {
+  category: SkillCategory;
+}
+
+const { category } = Astro.props;
+---
+
+<article class="skill-card">
+  <h3>{category.title}</h3>
+  <TagList items={category.items} />
+</article>
