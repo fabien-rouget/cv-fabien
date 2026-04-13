@@ -9,24 +9,36 @@ const { experience } = Astro.props;
 ---
 
 <article class="experience-card">
-  <h3>{experience.role}</h3>
-  <p class="experience-meta">{experience.details}</p>
-
-  <p class="card-summary">{experience.summary}</p>
-
-  <div class="card-block">
-    <h4>Ce que j’ai fait :</h4>
-    <ul class="bullet-list">
-      {experience.achievements.map((achievement) => <li>{achievement}</li>)}
-    </ul>
+  <div class="experience-marker" aria-hidden="true">
+    <span class="experience-dot"></span>
   </div>
 
-  {experience.stack.length > 0 && (
-    <div class="card-block">
-      <h4>Techno et outils :</h4>
-      <ul class="bullet-list">
-        {experience.stack.map((item) => <li>{item}</li>)}
-      </ul>
+  <div class="experience-main">
+    <header class="experience-header">
+      <div class="experience-heading">
+        <h3>{experience.role}</h3>
+        <p class="experience-meta">{experience.details}</p>
+      </div>
+    </header>
+
+    <p class="card-summary">{experience.summary}</p>
+
+    <div class="experience-columns">
+      <div class="card-block">
+        <h4>Ce que j’ai fait :</h4>
+        <ul class="bullet-list">
+          {experience.achievements.map((achievement) => <li>{achievement}</li>)}
+        </ul>
+      </div>
+
+      {experience.stack.length > 0 && (
+        <div class="card-block card-block-accent">
+          <h4>Techno et outils :</h4>
+          <ul class="bullet-list">
+            {experience.stack.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      )}
     </div>
-  )}
+  </div>
 </article>

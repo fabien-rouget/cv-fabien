@@ -18,8 +18,14 @@ const basePath = import.meta.env.BASE_URL;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="robots" content="index,follow" />
-    <meta name="theme-color" content="#0d4a78" />
+    <meta name="theme-color" content="#243447" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
     {canonicalUrl && <link rel="canonical" href={canonicalUrl.toString()} />}
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_FR" />
