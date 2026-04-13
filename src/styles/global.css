@@ -9,10 +9,10 @@
   --color-border: rgba(40, 59, 79, 0.11);
   --color-accent: #4d8a87;
   --color-accent-strong: #283b4f;
-  --color-accent-secondary: #dc8f72;
+  --color-accent-secondary: #d4b04a;
   --color-accent-tertiary: #86b9c5;
   --color-accent-soft: rgba(77, 138, 135, 0.12);
-  --color-accent-secondary-soft: rgba(220, 143, 114, 0.12);
+  --color-accent-secondary-soft: rgba(212, 176, 74, 0.16);
   --shadow-soft: 0 24px 60px rgba(30, 41, 54, 0.08);
   --radius-large: 28px;
   --radius-medium: 16px;
@@ -450,8 +450,8 @@ li {
     180deg,
     rgba(77, 138, 135, 0),
     rgba(77, 138, 135, 0.45) 14%,
-    rgba(220, 143, 114, 0.42) 82%,
-    rgba(220, 143, 114, 0)
+    rgba(212, 176, 74, 0.4) 82%,
+    rgba(212, 176, 74, 0)
   );
 }
 
