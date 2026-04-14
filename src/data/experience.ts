@@ -104,7 +104,7 @@ export const experiences: Experience[] = [
   },
   {
     role: "Développeur .NET",
-    details: "Cdiscount, Bordeaux – via SII – de novembre 2016 à août 2018",
+    details: "Cdiscount, Bordeaux – via SII – de septembre 2016 à août 2018",
     summary:
       "Intégré au sein d’une équipe d’une dizaine de personnes sur un projet ambitieux, l’objectif a été de faire migrer le catalogue produit de Cdiscount sur un nouveau modèle de données complètement différent. Au delà de cette migration, il a également fallu redévelopper tous les systèmes impactés, des couches les plus basses jusqu’au front en passant par la gestion des commandes.",
     achievements: [
@@ -113,29 +113,5 @@ export const experiences: Experience[] = [
       "Adaptation des frontaux pour exploiter le nouveau modèle.",
     ],
     stack: ["TFS - .NET framework - WCF", "SQL Server", "Sonar - Kanban"],
-  },
-  {
-    role: "Développeur .NET",
-    details: "Hager, Bordeaux – via SII – d’aout 2016 à novembre 2016",
-    summary:
-      "Mise en place d’un Intranet permettant l’exploitation d'un référentiel portant sur le catalogue d'objets connectés de la marque.",
-    achievements: ["Utilisation de Windows Forms et .Net Framework."],
-    stack: [],
-  },
-  {
-    role: "Développeur .NET",
-    details: "Airbus, Toulouse – via Altran – de janvier 2016 à Juillet 2016",
-    summary:
-      "Stage de fin d’étude. Réalisation de logiciels d’entreprise en C# et avec Access.",
-    achievements: ["Utilisation de TortoiseSVN, Log4Net. Découverte de Xamarin."],
-    stack: [],
-  },
-  {
-    role: "Développeur Wordpress",
-    details: "Zone88, Ile Maurice – été 2015",
-    summary:
-      "Stage dans la création et la maintenance de sites vitrines et de vente en ligne.",
-    achievements: ["Utilisation de Cherry Framework et de WooCommerce."],
-    stack: [],
-  },
+  }
 ];
