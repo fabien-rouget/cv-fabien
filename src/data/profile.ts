@@ -36,7 +36,7 @@ export const profile: Profile = {
     {
       title: "Cadrage et accompagnement technique",
       description:
-        "Cadrage technique, arbitrage des décisions structurantes, accompagnement des équipes et sécurisation des liivraisons."
+        "Cadrage technique, arbitrage des décisions structurantes, accompagnement des équipes et sécurisation des livraisons."
     },
   ],
   personalNotesTitle: "En dehors du code",
