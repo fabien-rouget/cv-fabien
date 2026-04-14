@@ -20,8 +20,8 @@ export const experiences: Experience[] = [
     stack: [
       ".Net 8",
       "ComosDb",
-      "AWS SNS/SQS"
-      "Azure container apps" 
+      "AWS SNS/SQS",
+      "Azure container apps",
       "Jenkins pipeline",
     ],
   },
