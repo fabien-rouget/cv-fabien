@@ -21,12 +21,12 @@ export const profile: Profile = {
     "Je conçois et pilote des systèmes backend fiables à forte volumétrie, et j’accompagne les équipes dans les décisions techniques clés.",
   intro:
     "J’accompagne des équipes et des produits sur des sujets de backend, d’architecture et d’intégration, de la conception jusqu’à la mise en production et à l’amélioration continue.",
-  valueTitle: "Ce que j’apporte",
+  valueTitle: "Expertise",
   strengths: [
     {
       title: "Backend C#",
       description:
-        "Conception et mise en production d’API C#/.NET et de systèmes event-driven performants et maintenables, avec une forte exigence de qualité et de robustesse.",
+        "API C#/.NET et systèmes event-driven conçus pour la scabilité et la montée en charge.",
     },
     {
       title: "Architecture et qualité logicielle",
@@ -36,7 +36,7 @@ export const profile: Profile = {
     {
       title: "Cadrage et accompagnement technique",
       description:
-        "Cadrage technique des projets, arbitrage des choix structurants, accompagnement des équipes et sécurisation des livraisons.",
+        "Cadrage technique, arbitrage des décisions structurantes, accompagnement des équipes et sécurisation des liivraisons."
     },
   ],
   personalNotesTitle: "En dehors du code",
