@@ -11,14 +11,18 @@ export const experiences: Experience[] = [
     role: "Software Engineer",
     details: "Betclic, Bordeaux – de mai 2025 à aujourd’hui",
     summary:
-      "To complete",
+      "Projet de réécriture from scratch du service de gestion des transactions",
     achievements: [
-      "To complete",
-      "To complete",
+      "Découpage d'un monolithe en architecture multi-services.",
+      "Migration d'une bdd SQL Serveur vers CosmosDb.",
+      "Remplacement d'une communication via API par de l'évènementiel.",
     ],
     stack: [
-      "To complete",
-      "To complete",
+      ".Net 8",
+      "ComosDb",
+      "AWS SNS/SQS"
+      "Azure container apps" 
+      "Jenkins pipeline",
     ],
   },
   {
