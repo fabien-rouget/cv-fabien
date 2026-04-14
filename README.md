@@ -1,43 +1,72 @@
-# Astro Starter Kit: Minimal
+# CV Fabien Rouget
 
-```sh
-npm create astro@latest -- --template minimal
+CV / site personnel statique construit avec Astro.
+
+## Développement local
+
+Depuis la racine du projet :
+
+```bash
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Commandes utiles :
 
-## 🚀 Project Structure
+```bash
+npm run build
+npm run preview
+```
 
-Inside of your Astro project, you'll see the following folders and files:
+## Publication GitHub Pages
+
+Le projet est préparé pour une future publication via GitHub Pages avec le domaine personnalisé :
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+https://cv.fabien-rouget.fr
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### Ce qui est déjà en place
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- `astro.config.mjs`
+  - `site` pointe sur `https://cv.fabien-rouget.fr`
+  - `base` vaut `/` par défaut, ce qui est le bon comportement pour un sous-domaine personnalisé
+- `.github/workflows/deploy.yml`
+  - workflow GitHub Actions basé sur l’action officielle Astro
+  - build sur `main`
+  - déploiement via GitHub Pages
+- `public/CNAME`
+  - contient `cv.fabien-rouget.fr`
 
-Any static assets, like images, can be placed in the `public/` directory.
+### Base path
 
-## 🧞 Commands
+Pour le domaine personnalisé prévu, aucun `base path` supplémentaire n’est nécessaire.
 
-All commands are run from the root of the project, from a terminal:
+Si un jour tu republies ce site sous un sous-chemin de type `https://fabienrouget.github.io/cv-fabien/`, tu peux tester ou builder avec :
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```bash
+PUBLIC_BASE_PATH=/cv-fabien/ npm run build
+```
 
-## 👀 Want to learn more?
+Le fichier `astro.config.mjs` normalise automatiquement cette valeur.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Mise en ligne le moment venu
+
+1. Pousser le projet sur GitHub.
+2. Dans `Settings > Pages`, choisir `GitHub Actions` comme source.
+3. Dans la même page, renseigner le domaine personnalisé `cv.fabien-rouget.fr`.
+4. Chez le fournisseur DNS, créer un enregistrement `CNAME` :
+
+```text
+cv.fabien-rouget.fr -> fabienrouget.github.io
+```
+
+5. Une fois le domaine validé par GitHub Pages, activer HTTPS.
+
+## Vérification production
+
+Le build de production se vérifie localement avec :
+
+```bash
+npm run build
+```

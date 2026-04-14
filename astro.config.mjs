@@ -1,8 +1,10 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
+const rawBasePath = process.env.PUBLIC_BASE_PATH?.trim();
+const base = rawBasePath ? `/${rawBasePath.replace(/^\/+|\/+$/g, '')}/` : '/';
+
 export default defineConfig({
-  site: 'https://fabienrouget.github.io',
-  base: process.env.PUBLIC_BASE_PATH ?? '/',
+  site: 'https://cv.fabien-rouget.fr',
+  base,
 });
