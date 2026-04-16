@@ -550,19 +550,10 @@ li {
 }
 
 .card-block {
-  padding: 0.85rem 0.9rem 0.9rem;
+  padding: 0.8rem 0.9rem 0.9rem;
   border-radius: 1rem;
   background: rgba(255, 255, 255, 0.74);
   border: 1px solid rgba(40, 59, 79, 0.08);
-}
-
-.card-block h4 {
-  margin: 0 0 0.75rem;
-  font-size: 0.74rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-accent);
 }
 
 .experience-support {
@@ -570,17 +561,8 @@ li {
   border-top: 1px solid rgba(40, 59, 79, 0.08);
 }
 
-.experience-support h4 {
-  margin: 0;
-  font-size: 0.74rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-text-soft);
-}
-
 .experience-support .tag-list {
-  margin-top: 0.75rem;
+  margin-top: 0.55rem;
 }
 
 .skills-grid {
@@ -721,13 +703,13 @@ li {
   }
 
   .experience-card {
-    grid-template-columns: 1fr;
-    gap: 0.65rem;
+    grid-template-columns: 1.3rem minmax(0, 1fr);
+    gap: 0.7rem;
   }
 
   .experience-marker {
-    justify-content: start;
-    padding-top: 0;
+    justify-content: center;
+    padding-top: 0.3rem;
   }
 
   .experience-main {
