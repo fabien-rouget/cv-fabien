@@ -216,7 +216,7 @@ li {
 
 .section-heading h2 {
   font-family: "Manrope", "Avenir Next", "Helvetica Neue", sans-serif;
-  font-size: clamp(1.35rem, 2.3vw, 1.8rem);
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--color-accent);
@@ -314,6 +314,8 @@ li {
 
 #presentation {
   padding: 1.5rem 1.6rem 1.6rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(239, 246, 244, 0.97));
 }
 
 #presentation::before,
@@ -337,12 +339,39 @@ li {
   background: linear-gradient(90deg, #b8902e, #e4c457);
 }
 
+#experiences {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(244, 249, 248, 0.96));
+  border-color: rgba(40, 59, 79, 0.13);
+  box-shadow: 0 28px 72px rgba(30, 41, 54, 0.1);
+}
+
+#experiences .section-heading {
+  margin-bottom: 1.2rem;
+}
+
+#experiences .section-heading h2 {
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  color: var(--color-accent);
+}
+
 #competences::before {
   background: linear-gradient(90deg, #caa43a, #efd16a);
 }
 
+#competences {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(246, 242, 232, 0.97));
+}
+
 #formations::before {
   background: linear-gradient(90deg, #b58c2b, #dcc36b);
+}
+
+#formations,
+.compact-aside {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(241, 246, 244, 0.97));
 }
 
 .compact-aside::before {
@@ -407,7 +436,6 @@ li {
 .profile-section h2,
 .section-heading h2 {
   margin: 0 0 1.5rem;
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
   line-height: 1.2;
 }
 
@@ -460,7 +488,7 @@ li {
 .experience-list {
   position: relative;
   display: grid;
-  gap: 0.85rem;
+  gap: 1rem;
   padding-left: 1.05rem;
 }
 
@@ -485,9 +513,10 @@ li {
   grid-template-columns: 1.55rem minmax(0, 1fr);
   gap: 0.8rem;
   align-items: start;
+  padding: 1.35rem;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 252, 251, 0.92));
-  box-shadow: 0 14px 34px rgba(30, 41, 54, 0.06);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 252, 251, 0.94));
+  box-shadow: 0 16px 36px rgba(30, 41, 54, 0.07);
 }
 
 .experience-card,
@@ -518,57 +547,106 @@ li {
 
 .experience-main {
   display: grid;
-  gap: 0.8rem;
+  gap: 0.9rem;
 }
 
 .experience-header {
-  display: flex;
-  align-items: start;
-  justify-content: space-between;
-  gap: 1rem;
+  display: block;
 }
 
 .experience-heading h3 {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.25rem;
+  font-size: clamp(1.35rem, 2vw, 1.6rem);
 }
 
 .experience-meta {
   margin: 0;
   color: var(--color-text-soft);
-  font-size: 0.9rem;
-  line-height: 1.45;
-  font-style: italic;
+  font-size: 0.86rem;
+  line-height: 1.35;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.08rem;
+  align-items: baseline;
 }
 
 .experience-company {
-  font-style: normal;
   font-weight: 800;
   color: var(--color-text);
 }
 
-.experience-context {
+.experience-location {
   font-weight: 500;
 }
 
-.card-summary {
-  margin: 0;
-  color: var(--color-text-soft);
+.experience-period {
+  color: rgba(103, 116, 131, 0.88);
 }
 
-.card-block {
-  padding: 0.8rem 0.9rem 0.9rem;
-  border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.74);
-  border: 1px solid rgba(40, 59, 79, 0.08);
+.experience-kicker {
+  margin: 0.38rem 0 0;
+  max-width: 70ch;
+  color: rgba(40, 59, 79, 0.8);
+  font-size: 0.94rem;
+  line-height: 1.48;
+}
+
+.experience-impact-list {
+  display: grid;
+  gap: 0.58rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.experience-impact-list li {
+  position: relative;
+  padding-left: 1rem;
+  color: var(--color-text);
+  line-height: 1.55;
+}
+
+.experience-impact-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.72rem;
+  left: 0;
+  width: 0.34rem;
+  height: 0.34rem;
+  border-radius: 999px;
+  background: var(--color-accent-secondary);
 }
 
 .experience-support {
-  padding-top: 0.15rem;
-  border-top: 1px solid rgba(40, 59, 79, 0.08);
+  padding-top: 0.4rem;
 }
 
 .experience-support .tag-list {
-  margin-top: 0.55rem;
+  margin-top: 0;
+  gap: 0.48rem;
+}
+
+.experience-support .tag {
+  padding: 0.34rem 0.68rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-color: rgba(77, 138, 135, 0.16);
+  background: rgba(77, 138, 135, 0.1);
+}
+
+@media (hover: hover) {
+  .experience-card {
+    transition:
+      transform 180ms ease,
+      box-shadow 180ms ease,
+      border-color 180ms ease;
+  }
+
+  .experience-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(77, 138, 135, 0.18);
+    box-shadow: 0 20px 40px rgba(30, 41, 54, 0.09);
+  }
 }
 
 .skills-grid {
@@ -710,8 +788,8 @@ li {
 
   .experience-card {
     grid-template-columns: 1.15rem minmax(0, 1fr);
-    gap: 0.6rem;
-    padding: 0.9rem 0.8rem;
+    gap: 0.65rem;
+    padding: 1rem 0.95rem;
   }
 
   .experience-marker {
@@ -720,7 +798,7 @@ li {
   }
 
   .experience-main {
-    gap: 0.6rem;
+    gap: 0.7rem;
   }
 
   .experience-meta {
@@ -728,29 +806,23 @@ li {
     line-height: 1.4;
   }
 
-  .card-summary {
-    font-size: 0.93rem;
-    line-height: 1.55;
+  .experience-kicker {
+    margin-top: 0.42rem;
+    font-size: 0.91rem;
+    line-height: 1.44;
   }
 
-  .card-block {
-    padding: 0;
-    background: transparent;
-    border: 0;
-    border-radius: 0;
+  .experience-impact-list {
+    gap: 0.45rem;
   }
 
-  .experience-card .bullet-list {
-    gap: 0.42rem;
-  }
-
-  .experience-card .bullet-list li {
+  .experience-impact-list li {
     padding-left: 0.72rem;
     font-size: 0.96rem;
     line-height: 1.5;
   }
 
-  .experience-card .bullet-list li::before {
+  .experience-impact-list li::before {
     top: 0.58rem;
     width: 0.26rem;
     height: 0.26rem;
@@ -759,6 +831,11 @@ li {
   .experience-support .tag-list {
     margin-top: 0.35rem;
     gap: 0.45rem;
+  }
+
+  .experience-support .tag {
+    font-size: 0.79rem;
+    padding: 0.3rem 0.62rem;
   }
 
   .education-list {

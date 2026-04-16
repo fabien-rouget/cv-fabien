@@ -7,6 +7,10 @@ interface Props {
 }
 
 const { experience } = Astro.props;
+const compactPeriod = experience.period
+  .replace(/^d['’]/i, "")
+  .replace(/^de\s+/i, "")
+  .replace(/\s+à\s+/i, " → ");
 ---
 
 <article class="experience-card">
@@ -20,18 +24,16 @@ const { experience } = Astro.props;
         <h3>{experience.role}</h3>
         <p class="experience-meta">
           <span class="experience-company">{experience.company}</span>
-          {experience.meta && <span class="experience-context">, {experience.meta}</span>}
+          <span class="experience-location"> — {experience.location}</span>
+          <span class="experience-period"> · {compactPeriod}</span>
         </p>
+        <p class="experience-kicker">{experience.context}</p>
       </div>
     </header>
 
-    <p class="card-summary">{experience.summary}</p>
-
-    <div class="card-block">
-      <ul class="bullet-list">
-        {experience.achievements.map((achievement) => <li>{achievement}</li>)}
-      </ul>
-    </div>
+    <ul class="experience-impact-list">
+      {experience.impacts.map((impact) => <li>{impact}</li>)}
+    </ul>
 
     {experience.stack.length > 0 && (
       <div class="experience-support">

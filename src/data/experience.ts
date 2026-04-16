@@ -1,9 +1,10 @@
 export interface Experience {
   role: string;
   company: string;
-  meta: string;
-  summary: string;
-  achievements: string[];
+  location: string;
+  period: string;
+  context: string;
+  impacts: string[];
   stack: string[];
 }
 
@@ -11,10 +12,10 @@ export const experiences: Experience[] = [
   {
     role: "Software Engineer",
     company: "Betclic",
-    meta: "Bordeaux – de mai 2025 à aujourd’hui",
-    summary:
-      "Projet de réécriture from scratch du service de gestion des transactions",
-    achievements: [
+    location: "Bordeaux",
+    period: "de mai 2025 à aujourd’hui",
+    context: "Réécriture du service de gestion des transactions et passage à une architecture multi-services.",
+    impacts: [
       "Découpage d'un monolithe en architecture multi-services.",
       "Migration d'une bdd SQL Serveur vers CosmosDb.",
       "Remplacement d'une communication via API par de l'évènementiel.",
@@ -30,10 +31,11 @@ export const experiences: Experience[] = [
   {
     role: "Leader technique",
     company: "Floa",
-    meta: "Bordeaux – de mars 2023 à mai 2025",
-    summary:
-      "Au sein de l’équipe Fraude et Conformité, ma mission est de mettre à disposition, au sein du parcours de souscription à un produit bancaire, différents contrôles nécessaires à la validation d’un dossier pour sa finalisation. À cela s’ajoute la construction d’un ETL permettant l’alimentation et l’exploitation d’une base de données orientée graphe ayant pour but la détection de communautés frauduleuses.",
-    achievements: [
+    location: "Bordeaux",
+    period: "de mars 2023 à mai 2025",
+    context:
+      "Contrôles de souscription et ETL orienté graphe pour la détection de communautés frauduleuses.",
+    impacts: [
       "Développement d’API de contrôle intégrées au parcours de souscription.",
       "Modélisation et mise en places de bases de données à différents usages : cache, référentiel, exploitation.",
       "Construction et maintenance d’un ETL pour alimenter une BDD graphe (Neo4J).",
@@ -52,10 +54,11 @@ export const experiences: Experience[] = [
   {
     role: "Software Engineer",
     company: "Betclic",
-    meta: "Bordeaux – de janvier 2022 à mars 2023",
-    summary:
-      "Dans une équipe dédiée à la refonte d’un système qui a pour objectif, en temps réel, de collecter et d’agréger au sein d’un ETL toutes les actions utilisateurs de la plateforme, j’ai participé au développement de tout le processus de traitement, de la réception des évènements jusqu’aux calculs d’agrégats sur le stockage gold.",
-    achievements: [
+    location: "Bordeaux",
+    period: "de janvier 2022 à mars 2023",
+    context:
+      "Refonte d’un pipeline temps réel de collecte et d’agrégation des actions utilisateurs.",
+    impacts: [
       "Réalisation de la chaine complète de l’ETL.",
       "Architecture full cloud sur AWS.",
       "Développement et mise à disposition des agrégats sous snowflake.",
@@ -71,10 +74,11 @@ export const experiences: Experience[] = [
   {
     role: "Software Engineer",
     company: "Believe",
-    meta: "Paris – de janvier 2021 à janvier 2022",
-    summary:
-      "Dans une équipe chargée de construire la nouvelle plateforme Big Data de l’entreprise, nous étions responsables de la collecte, de l’ingestion, de la préparation et transformation de la data jusqu’à son exposition.",
-    achievements: [
+    location: "Paris",
+    period: "de janvier 2021 à janvier 2022",
+    context:
+      "Construction de la nouvelle plateforme Big Data, de la collecte à l’exposition des données.",
+    impacts: [
       "Réalisation de la chaine complète de l’ETL.",
       "Architecture full cloud sur AWS.",
       "Développement et mise en place complète de la CICD.",
@@ -89,16 +93,15 @@ export const experiences: Experience[] = [
   {
     role: "Leader technique",
     company: "Cdiscount",
-    meta: "Bordeaux – d’août 2018 à décembre 2020",
-    summary:
-      "Leader technique de différentes équipes avant de passer leader technique transverse, j’ai participé à la réalisation de divers projets passionnants, de la conception de l’architecture jusqu’au déploiement, en passant par le cadrage du besoin. J’ai également fait parti de l’équipe d’astreinte, passant certaines nuits et certains weekends sur mon clavier. C#, les µServices, kafka et mongo étaient mes meilleurs amis.",
-    achievements: [
+    location: "Bordeaux",
+    period: "d’août 2018 à décembre 2020",
+    context: "Pilotage technique de plusieurs équipes et produits, de l’architecture au déploiement.",
+    impacts: [
       "Modélisation de l’architecture µService du référentiel produit Octopia.",
       "Mise en place du backend du nouveau tracking interne de Cdiscount.",
       "Mise en place du backend de la nouvelle plateforme de produits sponsorisés.",
       "Maintenance et évolution du flux d’export du catalogue Cdiscount vers Google Shopping.",
       "Gestion de diverses équipes de dev de 2 à 5 personnes.",
-      "Cadrage des besoins.",
     ],
     stack: [
       "Architecture µServices - API REST",
@@ -115,10 +118,11 @@ export const experiences: Experience[] = [
   {
     role: "Développeur .NET",
     company: "Cdiscount",
-    meta: "Bordeaux – via SII – de septembre 2016 à août 2018",
-    summary:
-      "Intégré au sein d’une équipe d’une dizaine de personnes sur un projet ambitieux, l’objectif a été de faire migrer le catalogue produit de Cdiscount sur un nouveau modèle de données complètement différent. Au delà de cette migration, il a également fallu redévelopper tous les systèmes impactés, des couches les plus basses jusqu’au front en passant par la gestion des commandes.",
-    achievements: [
+    location: "Bordeaux",
+    period: "de septembre 2016 à août 2018",
+    context:
+      "Migration du catalogue produit vers un nouveau modèle de données et refonte des systèmes associés.",
+    impacts: [
       "Modification et création de nouvelles bases de données.",
       "Évolution des web services pour utiliser le nouveau modèle.",
       "Adaptation des frontaux pour exploiter le nouveau modèle.",
