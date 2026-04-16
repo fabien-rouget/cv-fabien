@@ -14,16 +14,17 @@ export const experiences: Experience[] = [
     company: "Betclic",
     location: "Bordeaux",
     period: "de mai 2025 à aujourd’hui",
-    context: "Réécriture du service de gestion des transactions et passage à une architecture multi-services.",
+    context:
+      "Refonte du service de gestion des transactions vers une architecture distribuée multi-services.",
     impacts: [
-      "Découpage d'un monolithe en architecture multi-services.",
-      "Migration d'une bdd SQL Serveur vers CosmosDb.",
-      "Remplacement d'une communication via API par de l'évènementiel.",
+      "Découpage d’un monolithe en services spécialisés pour améliorer l’évolutivité du système.",
+      "Pilotage du rollout de l’ancien vers le nouveau système sans interruption de service.",
+      "Remplacement des échanges synchrones par une communication événementielle pour renforcer la résilience et le découplage.",
     ],
     stack: [
       ".Net 8",
       "ComosDb",
-      "AWS SNS/SQS",
+      "AWS Cloud",
       "Azure container apps",
       "Jenkins pipeline",
     ],
@@ -33,14 +34,13 @@ export const experiences: Experience[] = [
     company: "Floa",
     location: "Bordeaux",
     period: "de mars 2023 à mai 2025",
-    context:
-      "Contrôles de souscription et ETL orienté graphe pour la détection de communautés frauduleuses.",
+    context: "Conception de contrôles de souscription et d’un pipeline graphe pour la détection de fraude.",
     impacts: [
-      "Développement d’API de contrôle intégrées au parcours de souscription.",
-      "Modélisation et mise en places de bases de données à différents usages : cache, référentiel, exploitation.",
-      "Construction et maintenance d’un ETL pour alimenter une BDD graphe (Neo4J).",
-      "Construction et cadrage architecturels du périmètre de l’équipe.",
-      "Management technique de l’équipe.",
+      "Conception et mise en production d’API de contrôle intégrées au parcours de souscription.",
+      "Modélisation et mise en place de bases de données adaptées aux usages de cache, de référentiel et d’exploitation.",
+      "Conception et maintenance d’un ETL alimentant Neo4j pour détecter les communautés frauduleuses.",
+      "Structuration de l’architecture du périmètre et sécurisation de son évolution.",
+      "Encadrement technique de l’équipe et alignement des choix d’implémentation.",
     ],
     stack: [
       "C# - .NET 6 - .NET 8",
@@ -59,10 +59,10 @@ export const experiences: Experience[] = [
     context:
       "Refonte d’un pipeline temps réel de collecte et d’agrégation des actions utilisateurs.",
     impacts: [
-      "Réalisation de la chaine complète de l’ETL.",
-      "Architecture full cloud sur AWS.",
-      "Développement et mise à disposition des agrégats sous snowflake.",
-      "Développement des API du backoffice.",
+      "Construction de la chaîne ETL de bout en bout, de l’ingestion des événements au calcul des agrégats.",
+      "Déploiement d’une architecture cloud sur AWS pour absorber les volumes et simplifier l’exploitation.",
+      "Production et exposition des agrégats dans Snowflake pour les usages analytiques.",
+      "Développement des API du backoffice pour rendre les données exploitables.",
     ],
     stack: [
       "C# - .NET 6 - Python",
@@ -76,12 +76,11 @@ export const experiences: Experience[] = [
     company: "Believe",
     location: "Paris",
     period: "de janvier 2021 à janvier 2022",
-    context:
-      "Construction de la nouvelle plateforme Big Data, de la collecte à l’exposition des données.",
+    context: "Construction d’une plateforme Big Data de la collecte à l’exposition des données.",
     impacts: [
-      "Réalisation de la chaine complète de l’ETL.",
-      "Architecture full cloud sur AWS.",
-      "Développement et mise en place complète de la CICD.",
+      "Construction de la chaîne ETL de bout en bout pour fiabiliser les flux de données.",
+      "Déploiement d’une architecture cloud sur AWS pour industrialiser la plateforme.",
+      "Mise en place de la CI/CD pour accélérer et sécuriser les déploiements.",
     ],
     stack: [
       "Python",
@@ -95,13 +94,13 @@ export const experiences: Experience[] = [
     company: "Cdiscount",
     location: "Bordeaux",
     period: "d’août 2018 à décembre 2020",
-    context: "Pilotage technique de plusieurs équipes et produits, de l’architecture au déploiement.",
+    context: "Pilotage technique de services backend e-commerce, de l’architecture à la mise en production.",
     impacts: [
-      "Modélisation de l’architecture µService du référentiel produit Octopia.",
-      "Mise en place du backend du nouveau tracking interne de Cdiscount.",
-      "Mise en place du backend de la nouvelle plateforme de produits sponsorisés.",
-      "Maintenance et évolution du flux d’export du catalogue Cdiscount vers Google Shopping.",
-      "Gestion de diverses équipes de dev de 2 à 5 personnes.",
+      "Conception de l’architecture microservices du référentiel produit Octopia.",
+      "Développement du backend du tracking interne.",
+      "Développement du backend de la plateforme de produits sponsorisés.",
+      "Fiabilisation du flux d’export du catalogue vers Google Shopping.",
+      "Encadrement de plusieurs équipes (2 à 5 développeurs) et sécurisation des livraisons.",
     ],
     stack: [
       "Architecture µServices - API REST",
@@ -123,9 +122,9 @@ export const experiences: Experience[] = [
     context:
       "Migration du catalogue produit vers un nouveau modèle de données et refonte des systèmes associés.",
     impacts: [
-      "Modification et création de nouvelles bases de données.",
-      "Évolution des web services pour utiliser le nouveau modèle.",
-      "Adaptation des frontaux pour exploiter le nouveau modèle.",
+      "Conception et mise en place des bases de données du nouveau modèle.",
+      "Évolution des web services pour exposer et exploiter le référentiel.",
+      "Adaptation des frontaux pour assurer une transition sans rupture fonctionnelle.",
     ],
     stack: ["TFS - .NET framework - WCF", "SQL Server", "Sonar - Kanban"],
   }
