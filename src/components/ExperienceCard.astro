@@ -18,7 +18,10 @@ const { experience } = Astro.props;
     <header class="experience-header">
       <div class="experience-heading">
         <h3>{experience.role}</h3>
-        <p class="experience-meta">{experience.details}</p>
+        <p class="experience-meta">
+          <span class="experience-company">{experience.company}</span>
+          {experience.meta && <span class="experience-context">, {experience.meta}</span>}
+        </p>
       </div>
     </header>
 

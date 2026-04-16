@@ -533,15 +533,21 @@ li {
 }
 
 .experience-meta {
-  display: inline-flex;
-  align-items: center;
   margin: 0;
-  padding: 0.4rem 0.8rem;
-  border-radius: 999px;
-  background: rgba(77, 138, 135, 0.1);
-  color: var(--color-accent-strong);
-  font-size: 0.87rem;
-  font-weight: 700;
+  color: var(--color-text-soft);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  font-style: italic;
+}
+
+.experience-company {
+  font-style: normal;
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.experience-context {
+  font-weight: 500;
 }
 
 .card-summary {
@@ -718,8 +724,8 @@ li {
   }
 
   .experience-meta {
-    padding: 0.28rem 0.62rem;
-    font-size: 0.82rem;
+    font-size: 0.84rem;
+    line-height: 1.4;
   }
 
   .card-summary {
