@@ -18,15 +18,16 @@ export const experiences: Experience[] = [
       "Refonte du service de gestion des transactions vers une architecture distribuée multi-services.",
     impacts: [
       "Découpage d’un monolithe en services spécialisés pour améliorer l’évolutivité du système.",
-      "Pilotage du rollout de l’ancien vers le nouveau système sans interruption de service.",
+      "Rollout de l’ancien vers le nouveau système sans interruption de service.",
       "Remplacement des échanges synchrones par une communication événementielle pour renforcer la résilience et le découplage.",
     ],
     stack: [
-      ".Net 8",
+      ".NET 8",
       "ComosDb",
       "AWS Cloud",
       "Azure container apps",
       "Jenkins pipeline",
+      "Datadogs",
     ],
   },
   {
@@ -43,7 +44,7 @@ export const experiences: Experience[] = [
       "Encadrement technique de l’équipe et alignement des choix d’implémentation.",
     ],
     stack: [
-      "C# - .NET 6 - .NET 8",
+      ".NET 6",
       "Neo4J - Cypher",
       "Redis",
       "SQL Serveur - MongoDb",
@@ -57,7 +58,7 @@ export const experiences: Experience[] = [
     location: "Bordeaux",
     period: "de janvier 2022 à mars 2023",
     context:
-      "Refonte d’un pipeline temps réel de collecte et d’agrégation des actions utilisateurs.",
+      "Refonte d’un pipeline de collecte et d’agrégation des actions utilisateurs.",
     impacts: [
       "Construction de la chaîne ETL de bout en bout, de l’ingestion des événements au calcul des agrégats.",
       "Déploiement d’une architecture cloud sur AWS pour absorber les volumes et simplifier l’exploitation.",
@@ -65,7 +66,7 @@ export const experiences: Experience[] = [
       "Développement des API du backoffice pour rendre les données exploitables.",
     ],
     stack: [
-      "C# - .NET 6 - Python",
+      ".NET 6 - Python",
       "AWS : ECS, SQS, SNS, S3",
       "Snowflake - DBT - MongoDB",
       "Github, Jenkins, Terraform",
@@ -80,7 +81,7 @@ export const experiences: Experience[] = [
     impacts: [
       "Construction de la chaîne ETL de bout en bout pour fiabiliser les flux de données.",
       "Déploiement d’une architecture cloud sur AWS pour industrialiser la plateforme.",
-      "Mise en place de la CI/CD pour accélérer et sécuriser les déploiements.",
+      "Mise en place de la CI/CD sur l’intégralité du périmètre.",
     ],
     stack: [
       "Python",

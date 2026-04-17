@@ -15,10 +15,10 @@ export interface Profile {
 
 export const profile: Profile = {
   name: "Fabien Rouget",
-  title: "Ingénieur logiciel • Technical lead • C#",
+  title: "Ingénieur logiciel • Lead tech • C#  • Freelance",
   email: "freelance@fabien-rouget.fr",
   heroSummary:
-    "Je conçois et pilote des systèmes backend fiables à forte volumétrie, et j’accompagne les équipes dans les décisions techniques clés.",
+    "10 ans d’expérience en backend .NET sur des systèmes distribués à forte volumétrie, de la conception d’architecture à l’accompagnement des équipes.",
   intro:
     "J’accompagne des équipes et des produits sur des sujets de backend, d’architecture et d’intégration, de la conception jusqu’à la mise en production et à l’amélioration continue.",
   valueTitle: "Expertise",

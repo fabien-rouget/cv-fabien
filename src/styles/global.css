@@ -89,7 +89,7 @@ h3,
 h4,
 p,
 li {
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
 :focus-visible {
@@ -232,15 +232,16 @@ li {
 .hero-copy {
   position: relative;
   z-index: 1;
-  max-width: 48rem;
+  max-width: 52rem;
 }
 
 .hero-lead {
-  max-width: 48rem;
+  max-width: 52rem;
   margin: 0.6rem 0 0;
   font-size: clamp(1.08rem, 2vw, 1.28rem);
   line-height: 1.5;
   color: var(--color-accent-strong);
+  text-wrap: balance;
 }
 
 .section-intro {
@@ -585,10 +586,11 @@ li {
 
 .experience-kicker {
   margin: 0.38rem 0 0;
-  max-width: 70ch;
+  max-width: 82ch;
   color: rgba(40, 59, 79, 0.8);
   font-size: 0.94rem;
   line-height: 1.48;
+  text-wrap: balance;
 }
 
 .experience-impact-list {
