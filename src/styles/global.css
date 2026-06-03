@@ -577,11 +577,11 @@ li {
 
 .experience-logo-frame {
   display: grid;
-  flex: 0 0 3.15rem;
-  width: 3.15rem;
-  height: 3.15rem;
+  flex: 0 0 4.15rem;
+  width: 4.15rem;
+  height: 4.15rem;
   place-items: center;
-  padding: 0.48rem;
+  padding: 0.54rem;
   border: 1px solid rgba(33, 51, 68, 0.1);
   border-radius: 0.85rem;
   background: rgba(255, 255, 255, 0.78);
@@ -856,15 +856,15 @@ li {
 
   .experience-header {
     display: grid;
-    grid-template-columns: 2.7rem minmax(0, 1fr);
+    grid-template-columns: 3rem minmax(0, 1fr);
     gap: 0.35rem 0.7rem;
   }
 
   .experience-logo-frame {
-    flex-basis: 2.7rem;
-    width: 2.7rem;
-    height: 2.7rem;
-    padding: 0.42rem;
+    flex-basis: 3rem;
+    width: 3rem;
+    height: 3rem;
+    padding: 0.44rem;
     border-radius: 0.75rem;
     grid-column: 1;
     grid-row: 1 / span 2;
