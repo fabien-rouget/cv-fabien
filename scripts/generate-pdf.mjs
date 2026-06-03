@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { contactLinks } from "../src/data/contact.ts";
 import { educationItems } from "../src/data/education.ts";
@@ -7,6 +7,8 @@ import { profile } from "../src/data/profile.ts";
 import { skillCategories } from "../src/data/skills.ts";
 
 const outputPath = resolve("public/cv-fabien-rouget.pdf");
+const photoPath = resolve("public", profile.photo.src.replace(/^\//u, ""));
+const profilePhoto = await readFile(photoPath);
 const pageWidth = 595.28;
 const pageHeight = 841.89;
 const margin = 42;
@@ -133,6 +135,10 @@ const drawDot = (x, dotY, size = 3.2, color = colors.gold) => {
   drawRect(x, dotY, size, size, color);
 };
 
+const drawImage = (name, x, imageY, width, height) => {
+  add(`q ${width.toFixed(2)} 0 0 ${height.toFixed(2)} ${x.toFixed(2)} ${imageY.toFixed(2)} cm /${name} Do Q\n`);
+};
+
 const drawParagraph = (text, x, maxWidth, size, options = {}) => {
   const lineHeight = options.lineHeight ?? size * 1.45;
   const lines = wrapText(text, maxWidth, size, options.font ?? "F1");
@@ -226,11 +232,18 @@ const drawHeader = () => {
   drawRect(0, pageHeight - 132, pageWidth, 132, "#f2f8f7");
   drawRect(0, pageHeight - 136, pageWidth, 4, colors.gold);
 
+  const photoSize = 82;
+  const photoX = pageWidth - margin - photoSize;
+  const photoY = pageHeight - margin - photoSize + 1;
+  const textMaxWidth = contentWidth - photoSize - 30;
+  drawRect(photoX - 5, photoY - 5, photoSize + 10, photoSize + 10, "#ffffff", "#dce6e4");
+  drawImage("Photo", photoX, photoY, photoSize, photoSize);
+
   drawText(profile.name, margin, y, 28, { font: "F2", color: colors.text });
   y -= 25;
   drawText(profile.title, margin, y, 11.5, { font: "F2", color: colors.accent });
   y -= 18;
-  drawParagraph(profile.heroSummary, margin, contentWidth * 0.82, 10, { color: colors.text, lineHeight: 14 });
+  drawParagraph(profile.heroSummary, margin, textMaxWidth, 10, { color: colors.text, lineHeight: 14 });
 
   const email = contactLinks.find((link) => link.label === "Email")?.value;
   const linkedin = contactLinks.find((link) => link.label === "Linkedin")?.href;
@@ -362,7 +375,7 @@ const buildPdf = () => {
   const contentIds = [];
   pages.forEach((page, index) => {
     const content = Buffer.from(page.join(""), "latin1");
-    const contentId = 5 + index * 2;
+    const contentId = 6 + index * 2;
     const pageId = contentId + 1;
     contentIds.push(contentId);
     pageIds.push(pageId);
@@ -373,7 +386,7 @@ const buildPdf = () => {
     ]));
     addObject(
       pageId,
-      `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${pageWidth} ${pageHeight}] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents ${contentId} 0 R >>`
+      `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${pageWidth} ${pageHeight}] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> /XObject << /Photo 5 0 R >> >> /Contents ${contentId} 0 R >>`
     );
   });
 
@@ -381,6 +394,17 @@ const buildPdf = () => {
   addObject(2, `<< /Type /Pages /Kids [${pageIds.map((id) => `${id} 0 R`).join(" ")}] /Count ${pageIds.length} >>`);
   addObject(3, "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>");
   addObject(4, "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>");
+  addObject(
+    5,
+    Buffer.concat([
+      Buffer.from(
+        `<< /Type /XObject /Subtype /Image /Width 400 /Height 400 /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${profilePhoto.length} >>\nstream\n`,
+        "latin1"
+      ),
+      profilePhoto,
+      Buffer.from("\nendstream", "latin1"),
+    ])
+  );
 
   const chunks = [Buffer.from("%PDF-1.4\n%\xE2\xE3\xCF\xD3\n", "latin1")];
   const offsets = [0];

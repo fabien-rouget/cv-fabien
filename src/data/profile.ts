@@ -3,6 +3,10 @@ export interface Profile {
   title: string;
   email: string;
   heroSummary: string;
+  photo: {
+    src: string;
+    alt: string;
+  };
   intro: string;
   valueTitle: string;
   strengths: Array<{
@@ -19,6 +23,10 @@ export const profile: Profile = {
   email: "freelance@fabien-rouget.fr",
   heroSummary:
     "10 ans d’expérience en backend .NET sur des systèmes distribués à forte volumétrie, de la conception d’architecture à l’accompagnement des équipes.",
+  photo: {
+    src: "/images/fabien-rouget.jpeg",
+    alt: "Portrait de Fabien Rouget",
+  },
   intro:
     "J’accompagne des équipes et des produits sur des sujets de backend, d’architecture et d’intégration, de la conception jusqu’à la mise en production et à l’amélioration continue.",
   valueTitle: "Expertise",
