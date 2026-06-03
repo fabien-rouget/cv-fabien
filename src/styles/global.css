@@ -807,6 +807,10 @@ li {
     font-size: clamp(1.95rem, 9vw, 2.55rem);
   }
 
+  .hero-lead {
+    text-wrap: pretty;
+  }
+
   .experience-card {
     padding: 1rem 0.95rem;
   }
@@ -816,7 +820,9 @@ li {
   }
 
   .experience-header {
-    gap: 0.7rem;
+    display: grid;
+    grid-template-columns: 2.7rem minmax(0, 1fr);
+    gap: 0.35rem 0.7rem;
   }
 
   .experience-logo-frame {
@@ -825,6 +831,17 @@ li {
     height: 2.7rem;
     padding: 0.42rem;
     border-radius: 0.75rem;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .experience-heading {
+    display: contents;
+  }
+
+  .experience-heading h3,
+  .experience-meta {
+    grid-column: 2;
   }
 
   .experience-meta {
@@ -833,9 +850,11 @@ li {
   }
 
   .experience-kicker {
+    grid-column: 1 / -1;
     margin-top: 0.42rem;
     font-size: 0.91rem;
     line-height: 1.44;
+    text-wrap: pretty;
   }
 
   .experience-impact-list {
