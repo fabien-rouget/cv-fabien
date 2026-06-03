@@ -14,9 +14,12 @@ npm run dev
 Commandes utiles :
 
 ```bash
+npm run pdf
 npm run build
 npm run preview
 ```
+
+La commande `npm run pdf` régénère le fichier statique `public/cv-fabien-rouget.pdf`, utilisé par le bouton de téléchargement du site.
 
 ## Publication GitHub Pages
 

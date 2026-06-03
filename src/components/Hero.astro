@@ -11,6 +11,9 @@ const { contactLinks, profile } = Astro.props;
 const getActionLabel = (link: ContactLink) => (link.label === "Email" ? "Me contacter" : link.value);
 const getAriaLabel = (link: ContactLink) =>
   link.label === "Email" ? `Me contacter par email à ${link.value}` : link.value;
+const getHref = (link: ContactLink) =>
+  link.href.startsWith("/") ? `${import.meta.env.BASE_URL}${link.href.slice(1)}` : link.href;
+const isPrimaryAction = (link: ContactLink) => link.label === "Email";
 ---
 
 <header class="hero" id="top">
@@ -22,9 +25,10 @@ const getAriaLabel = (link: ContactLink) =>
     <div class="hero-actions">
       {contactLinks.map((link) => (
         <a
-          class:list={["button", link.external ? "button-secondary" : "button-primary"]}
-          href={link.href}
+          class:list={["button", isPrimaryAction(link) ? "button-primary" : "button-secondary"]}
+          href={getHref(link)}
           aria-label={getAriaLabel(link)}
+          download={link.download}
           rel={link.external ? "noreferrer" : undefined}
           target={link.external ? "_blank" : undefined}
         >

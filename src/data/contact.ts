@@ -3,6 +3,7 @@ export interface ContactLink {
   value: string;
   href: string;
   external?: boolean;
+  download?: string;
 }
 
 export const contactLinks: ContactLink[] = [
@@ -16,5 +17,11 @@ export const contactLinks: ContactLink[] = [
     value: "Linkedin",
     href: "https://www.linkedin.com/in/fabien-rouget/",
     external: true,
+  },
+  {
+    label: "PDF",
+    value: "Télécharger le CV",
+    href: "/cv-fabien-rouget.pdf",
+    download: "Fabien_Rouget_CV.pdf",
   },
 ];

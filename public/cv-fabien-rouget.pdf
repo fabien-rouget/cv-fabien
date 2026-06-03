@@ -1,0 +1,311 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 8526 >>
+stream
+0.949 0.973 0.969 rg 0.00 709.89 595.28 132.00 re f
+0.780 0.639 0.294 rg 0.00 705.89 595.28 4.00 re f
+0.110 0.153 0.200 rg BT /F2 28.00 Tf 1 0 0 1 42.00 799.89 Tm (Fabien Rouget) Tj ET
+0.251 0.435 0.455 rg BT /F2 11.50 Tf 1 0 0 1 42.00 774.89 Tm (Ingénieur logiciel  Lead tech  C#   Freelance) Tj ET
+0.110 0.153 0.200 rg BT /F1 10.00 Tf 1 0 0 1 42.00 756.89 Tm (10 ans d'expérience en backend .NET sur des systèmes distribués à forte volumétrie, de) Tj ET
+0.110 0.153 0.200 rg BT /F1 10.00 Tf 1 0 0 1 42.00 742.89 Tm (la conception d'architecture à l'accompagnement des équipes.) Tj ET
+0.392 0.443 0.498 rg BT /F1 8.50 Tf 1 0 0 1 42.00 724.89 Tm (freelance@fabien-rouget.fr  |  https://www.linkedin.com/in/fabien-rouget/) Tj ET
+0.251 0.435 0.455 rg BT /F2 15.00 Tf 1 0 0 1 42.00 686.89 Tm (Expertise) Tj ET
+0.780 0.639 0.294 RG 0.65 w 42.00 677.89 m 553.28 677.89 l S
+0.969 0.984 0.980 rg 0.863 0.902 0.894 RG 42.00 587.89 246.64 72.00 re B
+0.780 0.639 0.294 rg 42.00 587.89 3.00 72.00 re f
+0.110 0.153 0.200 rg BT /F2 9.50 Tf 1 0 0 1 54.00 643.89 Tm (Backend C#) Tj ET
+0.392 0.443 0.498 rg BT /F1 8.20 Tf 1 0 0 1 54.00 626.89 Tm (API C#/.NET et systèmes event-driven conçus pour la) Tj ET
+0.392 0.443 0.498 rg BT /F1 8.20 Tf 1 0 0 1 54.00 616.09 Tm (scabilité et la montée en charge.) Tj ET
+0.969 0.984 0.980 rg 0.863 0.902 0.894 RG 306.64 587.89 246.64 72.00 re B
+0.780 0.639 0.294 rg 306.64 587.89 3.00 72.00 re f
+0.110 0.153 0.200 rg BT /F2 9.50 Tf 1 0 0 1 318.64 643.89 Tm (Architecture et qualité logicielle) Tj ET
+0.392 0.443 0.498 rg BT /F1 8.20 Tf 1 0 0 1 318.64 626.89 Tm (Mise en place d'architectures évolutives, avec un fort) Tj ET
+0.392 0.443 0.498 rg BT /F1 8.20 Tf 1 0 0 1 318.64 616.09 Tm (focus sur la qualité logicielle, les tests,) Tj ET
+0.392 0.443 0.498 rg BT /F1 8.20 Tf 1 0 0 1 318.64 605.29 Tm (l'observabilité et la performance.) Tj ET
+0.969 0.984 0.980 rg 0.863 0.902 0.894 RG 42.00 503.89 246.64 72.00 re B
+0.780 0.639 0.294 rg 42.00 503.89 3.00 72.00 re f
+0.110 0.153 0.200 rg BT /F2 9.50 Tf 1 0 0 1 54.00 559.89 Tm (Cadrage et accompagnement technique) Tj ET
+0.392 0.443 0.498 rg BT /F1 8.20 Tf 1 0 0 1 54.00 542.89 Tm (Cadrage technique, arbitrage des décisions) Tj ET
+0.392 0.443 0.498 rg BT /F1 8.20 Tf 1 0 0 1 54.00 532.09 Tm (structurantes, accompagnement des équipes et) Tj ET
+0.392 0.443 0.498 rg BT /F1 8.20 Tf 1 0 0 1 54.00 521.29 Tm (sécurisation des livraisons.) Tj ET
+0.969 0.984 0.980 rg 0.863 0.902 0.894 RG 306.64 503.89 246.64 72.00 re B
+0.780 0.639 0.294 rg 306.64 503.89 3.00 72.00 re f
+0.110 0.153 0.200 rg BT /F2 9.50 Tf 1 0 0 1 318.64 559.89 Tm (Développement assisté par l'IA) Tj ET
+0.392 0.443 0.498 rg BT /F1 8.20 Tf 1 0 0 1 318.64 542.89 Tm (Usage d'outils IA et de workflows agentiques pour) Tj ET
+0.392 0.443 0.498 rg BT /F1 8.20 Tf 1 0 0 1 318.64 532.09 Tm (accélérer le développement, l'analyse de code et la) Tj ET
+0.392 0.443 0.498 rg BT /F1 8.20 Tf 1 0 0 1 318.64 521.29 Tm (livraison.) Tj ET
+0.251 0.435 0.455 rg BT /F2 15.00 Tf 1 0 0 1 42.00 475.89 Tm (Expériences) Tj ET
+0.780 0.639 0.294 RG 0.65 w 42.00 466.89 m 553.28 466.89 l S
+0.984 0.992 0.988 rg 0.875 0.910 0.902 RG 42.00 274.39 511.28 178.50 re B
+0.780 0.639 0.294 rg 42.00 274.39 3.00 178.50 re f
+0.110 0.153 0.200 rg BT /F2 12.70 Tf 1 0 0 1 55.00 434.89 Tm (Software Engineer) Tj ET
+0.392 0.443 0.498 rg BT /F2 8.80 Tf 1 0 0 1 55.00 421.89 Tm (Betclic - Bordeaux - mai 2025 -> aujourd'hui) Tj ET
+0.392 0.443 0.498 rg BT /F1 9.00 Tf 1 0 0 1 55.00 408.89 Tm (Refonte du service de gestion des transactions vers une architecture distribuée multi-services.) Tj ET
+0.780 0.639 0.294 rg 57.00 395.59 2.80 2.80 re f
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 392.39 Tm (Découpage d'un monolithe en services spécialisés pour améliorer l'évolutivité du système.) Tj ET
+0.780 0.639 0.294 rg 57.00 382.09 2.80 2.80 re f
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 378.89 Tm (Rollout de l'ancien vers le nouveau système sans interruption de service.) Tj ET
+0.780 0.639 0.294 rg 57.00 368.59 2.80 2.80 re f
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 365.39 Tm (Remplacement des échanges synchrones par une communication événementielle pour renforcer la résilience et le) Tj ET
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 352.89 Tm (découplage.) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 71.00 329.39 34.15 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 77.00 334.19 Tm (.NET 8) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 110.15 329.39 37.84 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 116.15 334.19 Tm (ComosDb) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 153.00 329.39 45.23 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 159.00 334.19 Tm (AWS Cloud) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 203.22 329.39 85.84 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 209.22 334.19 Tm (Azure container apps) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 294.06 329.39 71.07 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 300.06 334.19 Tm (Jenkins pipeline) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 370.14 329.39 41.54 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 376.14 334.19 Tm (Datadogs) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 71.00 309.39 133.84 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 77.00 314.19 Tm (Développement agentique avec l'IA) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 209.84 309.39 52.61 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 215.84 314.19 Tm (Claude Code) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 267.45 309.39 63.69 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 273.45 314.19 Tm (GitHub Copilot) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 336.14 309.39 34.15 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 342.14 314.19 Tm (Cursor) Tj ET
+0.984 0.992 0.988 rg 0.875 0.910 0.902 RG 42.00 84.89 511.28 185.50 re B
+0.780 0.639 0.294 rg 42.00 84.89 3.00 185.50 re f
+0.110 0.153 0.200 rg BT /F2 12.70 Tf 1 0 0 1 55.00 252.39 Tm (Leader technique) Tj ET
+0.392 0.443 0.498 rg BT /F2 8.80 Tf 1 0 0 1 55.00 239.39 Tm (Floa - Bordeaux - mars 2023 -> mai 2025) Tj ET
+0.392 0.443 0.498 rg BT /F1 9.00 Tf 1 0 0 1 55.00 226.39 Tm (Conception de contrôles de souscription et d'un pipeline graphe pour la détection de fraude.) Tj ET
+0.780 0.639 0.294 rg 57.00 213.09 2.80 2.80 re f
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 209.89 Tm (Conception et mise en production d'API de contrôle intégrées au parcours de souscription.) Tj ET
+0.780 0.639 0.294 rg 57.00 199.59 2.80 2.80 re f
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 196.39 Tm (Modélisation et mise en place de bases de données adaptées aux usages de cache, de référentiel et) Tj ET
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 183.89 Tm (d'exploitation.) Tj ET
+0.780 0.639 0.294 rg 57.00 173.59 2.80 2.80 re f
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 170.39 Tm (Conception et maintenance d'un ETL alimentant Neo4j pour détecter les communautés frauduleuses.) Tj ET
+0.780 0.639 0.294 rg 57.00 160.09 2.80 2.80 re f
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 156.89 Tm (Structuration de l'architecture du périmètre et sécurisation de son évolution.) Tj ET
+0.780 0.639 0.294 rg 57.00 146.59 2.80 2.80 re f
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 143.39 Tm (Encadrement technique de l'équipe et alignement des choix d'implémentation.) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 71.00 119.89 34.15 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 77.00 124.69 Tm (.NET 6) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 110.15 119.89 63.69 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 116.15 124.69 Tm (Neo4J - Cypher) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 178.84 119.89 30.46 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 184.84 124.69 Tm (Redis) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 214.30 119.89 89.53 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 220.30 124.69 Tm (SQL Serveur - MongoDb) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 308.83 119.89 41.54 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 314.83 124.69 Tm (RabbitMQ) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 355.37 119.89 115.38 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 361.37 124.69 Tm (Kibana - Dynatrace - Grafana) Tj ET
+0.929 0.945 0.941 RG 0.65 w 42.00 32.00 m 553.28 32.00 l S
+0.392 0.443 0.498 rg BT /F1 7.50 Tf 1 0 0 1 42.00 20.00 Tm (Fabien Rouget - CV - page 1) Tj ET
+
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 8268 >>
+stream
+0.984 0.992 0.988 rg 0.875 0.910 0.902 RG 42.00 644.39 511.28 159.50 re B
+0.780 0.639 0.294 rg 42.00 644.39 3.00 159.50 re f
+0.110 0.153 0.200 rg BT /F2 12.70 Tf 1 0 0 1 55.00 785.89 Tm (Software Engineer) Tj ET
+0.392 0.443 0.498 rg BT /F2 8.80 Tf 1 0 0 1 55.00 772.89 Tm (Betclic - Bordeaux - janvier 2022 -> mars 2023) Tj ET
+0.392 0.443 0.498 rg BT /F1 9.00 Tf 1 0 0 1 55.00 759.89 Tm (Refonte d'un pipeline de collecte et d'agrégation des actions utilisateurs.) Tj ET
+0.780 0.639 0.294 rg 57.00 746.59 2.80 2.80 re f
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 743.39 Tm (Construction de la chaîne ETL de bout en bout, de l'ingestion des événements au calcul des agrégats.) Tj ET
+0.780 0.639 0.294 rg 57.00 733.09 2.80 2.80 re f
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 729.89 Tm (Déploiement d'une architecture cloud sur AWS pour absorber les volumes et simplifier l'exploitation.) Tj ET
+0.780 0.639 0.294 rg 57.00 719.59 2.80 2.80 re f
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 716.39 Tm (Production et exposition des agrégats dans Snowflake pour les usages analytiques.) Tj ET
+0.780 0.639 0.294 rg 57.00 706.09 2.80 2.80 re f
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 702.89 Tm (Développement des API du backoffice pour rendre les données exploitables.) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 71.00 679.39 67.38 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 77.00 684.19 Tm (.NET 6 - Python) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 143.38 679.39 96.92 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 149.38 684.19 Tm (AWS : ECS, SQS, SNS, S3) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 245.30 679.39 104.30 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 251.30 684.19 Tm (Snowflake - DBT - MongoDB) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 354.60 679.39 107.99 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 360.60 684.19 Tm (Github, Jenkins, Terraform) Tj ET
+0.984 0.992 0.988 rg 0.875 0.910 0.902 RG 42.00 494.39 511.28 146.00 re B
+0.780 0.639 0.294 rg 42.00 494.39 3.00 146.00 re f
+0.110 0.153 0.200 rg BT /F2 12.70 Tf 1 0 0 1 55.00 622.39 Tm (Software Engineer) Tj ET
+0.392 0.443 0.498 rg BT /F2 8.80 Tf 1 0 0 1 55.00 609.39 Tm (Believe - Paris - janvier 2021 -> janvier 2022) Tj ET
+0.392 0.443 0.498 rg BT /F1 9.00 Tf 1 0 0 1 55.00 596.39 Tm (Construction d'une plateforme Big Data de la collecte à l'exposition des données.) Tj ET
+0.780 0.639 0.294 rg 57.00 583.09 2.80 2.80 re f
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 579.89 Tm (Construction de la chaîne ETL de bout en bout pour fiabiliser les flux de données.) Tj ET
+0.780 0.639 0.294 rg 57.00 569.59 2.80 2.80 re f
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 566.39 Tm (Déploiement d'une architecture cloud sur AWS pour industrialiser la plateforme.) Tj ET
+0.780 0.639 0.294 rg 57.00 556.09 2.80 2.80 re f
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 552.89 Tm (Mise en place de la CI/CD sur l'intégralité du périmètre.) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 71.00 529.39 34.15 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 77.00 534.19 Tm (Python) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 110.15 529.39 215.06 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 116.15 534.19 Tm (AWS : StepFunctions, Lambda, DMS, S3, RDS Aurora, Batch) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 330.21 529.39 119.07 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 336.21 534.19 Tm (Snowflake - SQL- DBT - Sqitch) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 454.28 529.39 67.38 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 460.28 534.19 Tm (Gitlab - Pulumi) Tj ET
+0.984 0.992 0.988 rg 0.875 0.910 0.902 RG 42.00 297.39 511.28 193.00 re B
+0.780 0.639 0.294 rg 42.00 297.39 3.00 193.00 re f
+0.110 0.153 0.200 rg BT /F2 12.70 Tf 1 0 0 1 55.00 472.39 Tm (Leader technique) Tj ET
+0.392 0.443 0.498 rg BT /F2 8.80 Tf 1 0 0 1 55.00 459.39 Tm (Cdiscount - Bordeaux - août 2018 -> décembre 2020) Tj ET
+0.392 0.443 0.498 rg BT /F1 9.00 Tf 1 0 0 1 55.00 446.39 Tm (Pilotage technique de services backend e-commerce, de l'architecture à la mise en production.) Tj ET
+0.780 0.639 0.294 rg 57.00 433.09 2.80 2.80 re f
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 429.89 Tm (Conception de l'architecture microservices du référentiel produit Octopia.) Tj ET
+0.780 0.639 0.294 rg 57.00 419.59 2.80 2.80 re f
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 416.39 Tm (Développement du backend du tracking interne.) Tj ET
+0.780 0.639 0.294 rg 57.00 406.09 2.80 2.80 re f
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 402.89 Tm (Développement du backend de la plateforme de produits sponsorisés.) Tj ET
+0.780 0.639 0.294 rg 57.00 392.59 2.80 2.80 re f
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 389.39 Tm (Fiabilisation du flux d'export du catalogue vers Google Shopping.) Tj ET
+0.780 0.639 0.294 rg 57.00 379.09 2.80 2.80 re f
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 375.89 Tm (Encadrement de plusieurs équipes \(2 à 5 développeurs\) et sécurisation des livraisons.) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 71.00 352.39 148.60 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 77.00 357.19 Tm (Architecture microServices - API REST) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 224.60 352.39 111.68 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 230.60 357.19 Tm (.NET Core - C# - Kubernetes) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 341.29 352.39 133.84 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 347.29 357.19 Tm (MongoDB - PostgreSQL - SQL Server) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 480.12 352.39 56.30 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 486.12 357.19 Tm (Apache Kafka) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 71.00 332.39 52.61 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 77.00 337.19 Tm (Apache Solr) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 128.61 332.39 104.30 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 134.61 337.19 Tm (TFS - Azure Devops - JIRA) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 237.91 332.39 96.92 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 243.91 337.19 Tm (CICD - Sonar - Specflow) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 339.83 332.39 45.23 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 345.83 337.19 Tm (Liquibase) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 390.06 332.39 30.46 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 396.06 337.19 Tm (SCRUM) Tj ET
+0.984 0.992 0.988 rg 0.875 0.910 0.902 RG 42.00 147.39 511.28 146.00 re B
+0.780 0.639 0.294 rg 42.00 147.39 3.00 146.00 re f
+0.110 0.153 0.200 rg BT /F2 12.70 Tf 1 0 0 1 55.00 275.39 Tm (Développeur .NET) Tj ET
+0.392 0.443 0.498 rg BT /F2 8.80 Tf 1 0 0 1 55.00 262.39 Tm (Cdiscount - Bordeaux - septembre 2016 -> août 2018) Tj ET
+0.392 0.443 0.498 rg BT /F1 9.00 Tf 1 0 0 1 55.00 249.39 Tm (Migration du catalogue produit vers un nouveau modèle de données et refonte des systèmes associés.) Tj ET
+0.780 0.639 0.294 rg 57.00 236.09 2.80 2.80 re f
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 232.89 Tm (Conception et mise en place des bases de données du nouveau modèle.) Tj ET
+0.780 0.639 0.294 rg 57.00 222.59 2.80 2.80 re f
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 219.39 Tm (Évolution des web services pour exposer et exploiter le référentiel.) Tj ET
+0.780 0.639 0.294 rg 57.00 209.09 2.80 2.80 re f
+0.110 0.153 0.200 rg BT /F1 8.80 Tf 1 0 0 1 70.00 205.89 Tm (Adaptation des frontaux pour assurer une transition sans rupture fonctionnelle.) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 71.00 182.39 107.99 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 77.00 187.19 Tm (TFS - .NET framework - WCF) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 183.99 182.39 48.92 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 189.99 187.19 Tm (SQL Server) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 237.91 182.39 63.69 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 243.91 187.19 Tm (Sonar - Kanban) Tj ET
+0.929 0.945 0.941 RG 0.65 w 42.00 32.00 m 553.28 32.00 l S
+0.392 0.443 0.498 rg BT /F1 7.50 Tf 1 0 0 1 42.00 20.00 Tm (Fabien Rouget - CV - page 2) Tj ET
+
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 4858 >>
+stream
+0.251 0.435 0.455 rg BT /F2 15.00 Tf 1 0 0 1 42.00 787.89 Tm (Compétences) Tj ET
+0.780 0.639 0.294 RG 0.65 w 42.00 778.89 m 553.28 778.89 l S
+0.110 0.153 0.200 rg BT /F2 10.50 Tf 1 0 0 1 42.00 760.89 Tm (Langages et frameworks) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 42.00 732.89 19.38 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 48.00 737.69 Tm (C#) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 66.38 732.89 26.77 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 72.38 737.69 Tm (.NET) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 98.15 732.89 41.54 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 104.15 737.69 Tm (ASP .NET) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 144.69 732.89 34.15 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 150.69 737.69 Tm (Python) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 183.84 732.89 23.08 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 189.84 737.69 Tm (SQL) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 211.92 732.89 34.15 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 217.92 737.69 Tm (Cypher) Tj ET
+0.110 0.153 0.200 rg BT /F2 10.50 Tf 1 0 0 1 42.00 715.89 Tm (IA) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 42.00 687.89 52.61 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 48.00 692.69 Tm (Claude Code) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 99.61 687.89 34.15 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 105.61 692.69 Tm (Cursor) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 138.76 687.89 30.46 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 144.76 692.69 Tm (Codex) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 174.22 687.89 63.69 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 180.22 692.69 Tm (GitHub Copilot) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 242.91 687.89 45.23 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 248.91 692.69 Tm (Worktrees) Tj ET
+0.110 0.153 0.200 rg BT /F2 10.50 Tf 1 0 0 1 42.00 670.89 Tm (Base de données) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 42.00 642.89 23.08 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 48.00 647.69 Tm (SQL) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 70.08 642.89 37.84 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 76.08 647.69 Tm (MongoDB) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 112.92 642.89 45.23 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 118.92 647.69 Tm (Snowflake) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 163.15 642.89 23.08 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 169.15 647.69 Tm (DBT) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 191.22 642.89 30.46 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 197.22 647.69 Tm (Redis) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 226.68 642.89 30.46 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 232.68 647.69 Tm (Neo4j) Tj ET
+0.110 0.153 0.200 rg BT /F2 10.50 Tf 1 0 0 1 42.00 625.89 Tm (Outils et plateformes) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 42.00 597.89 41.54 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 48.00 602.69 Tm (RabbitMQ) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 88.54 597.89 56.30 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 94.54 602.69 Tm (Apache Kafka) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 149.84 597.89 45.23 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 155.84 602.69 Tm (AWS Cloud) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 200.07 597.89 23.08 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 206.07 602.69 Tm (Git) Tj ET
+0.933 0.961 0.957 rg 0.827 0.878 0.871 RG 228.14 597.89 30.46 15.00 re B
+0.251 0.435 0.455 rg BT /F2 7.10 Tf 1 0 0 1 234.14 602.69 Tm (Sonar) Tj ET
+0.251 0.435 0.455 rg BT /F2 15.00 Tf 1 0 0 1 42.00 568.89 Tm (Formations) Tj ET
+0.780 0.639 0.294 RG 0.65 w 42.00 559.89 m 553.28 559.89 l S
+0.110 0.153 0.200 rg BT /F2 10.50 Tf 1 0 0 1 42.00 541.89 Tm (Ingénieur en informatique) Tj ET
+0.392 0.443 0.498 rg BT /F1 9.00 Tf 1 0 0 1 42.00 528.89 Tm (École 3iL de Limoges - 2016) Tj ET
+0.110 0.153 0.200 rg BT /F2 10.50 Tf 1 0 0 1 42.00 510.89 Tm (Licence informatique) Tj ET
+0.392 0.443 0.498 rg BT /F1 9.00 Tf 1 0 0 1 42.00 497.89 Tm (Université de Limoges - 2014) Tj ET
+0.251 0.435 0.455 rg BT /F2 15.00 Tf 1 0 0 1 42.00 467.89 Tm (En dehors du code) Tj ET
+0.780 0.639 0.294 RG 0.65 w 42.00 458.89 m 553.28 458.89 l S
+0.780 0.639 0.294 rg 47.00 444.09 3.00 3.00 re f
+0.110 0.153 0.200 rg BT /F1 9.00 Tf 1 0 0 1 58.00 440.89 Tm (Fervent partisan du BÉPO) Tj ET
+0.780 0.639 0.294 rg 47.00 428.09 3.00 3.00 re f
+0.110 0.153 0.200 rg BT /F1 9.00 Tf 1 0 0 1 58.00 424.89 Tm (Ceinture noire de judo) Tj ET
+0.929 0.945 0.941 RG 0.65 w 42.00 32.00 m 553.28 32.00 l S
+0.392 0.443 0.498 rg BT /F1 7.50 Tf 1 0 0 1 42.00 20.00 Tm (Fabien Rouget - CV - page 3) Tj ET
+
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 9 0 R >>
+endobj
+xref
+0 11
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000134 00000 n 
+0000000231 00000 n 
+0000000333 00000 n 
+0000008911 00000 n 
+0000009053 00000 n 
+0000017373 00000 n 
+0000017515 00000 n 
+0000022425 00000 n 
+trailer
+<< /Size 11 /Root 1 0 R >>
+startxref
+22568
+%%EOF
