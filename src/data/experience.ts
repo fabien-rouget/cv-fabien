@@ -1,6 +1,10 @@
 export interface Experience {
   role: string;
   company: string;
+  logo: {
+    src: string;
+    alt: string;
+  };
   location: string;
   period: string;
   context: string;
@@ -12,6 +16,10 @@ export const experiences: Experience[] = [
   {
     role: "Software Engineer",
     company: "Betclic",
+    logo: {
+      src: "/logos/betclic.svg",
+      alt: "Logo Betclic",
+    },
     location: "Bordeaux",
     period: "de mai 2025 à aujourd’hui",
     context:
@@ -37,6 +45,10 @@ export const experiences: Experience[] = [
   {
     role: "Leader technique",
     company: "Floa",
+    logo: {
+      src: "/logos/floa.png",
+      alt: "Logo FLOA",
+    },
     location: "Bordeaux",
     period: "de mars 2023 à mai 2025",
     context: "Conception de contrôles de souscription et d’un pipeline graphe pour la détection de fraude.",
@@ -59,6 +71,10 @@ export const experiences: Experience[] = [
   {
     role: "Software Engineer",
     company: "Betclic",
+    logo: {
+      src: "/logos/betclic.svg",
+      alt: "Logo Betclic",
+    },
     location: "Bordeaux",
     period: "de janvier 2022 à mars 2023",
     context:
@@ -79,6 +95,10 @@ export const experiences: Experience[] = [
   {
     role: "Software Engineer",
     company: "Believe",
+    logo: {
+      src: "/logos/believe.svg",
+      alt: "Logo Believe",
+    },
     location: "Paris",
     period: "de janvier 2021 à janvier 2022",
     context: "Construction d’une plateforme Big Data de la collecte à l’exposition des données.",
@@ -97,6 +117,10 @@ export const experiences: Experience[] = [
   {
     role: "Leader technique",
     company: "Cdiscount",
+    logo: {
+      src: "/logos/cdiscount.svg",
+      alt: "Logo Cdiscount",
+    },
     location: "Bordeaux",
     period: "d’août 2018 à décembre 2020",
     context: "Pilotage technique de services backend e-commerce, de l’architecture à la mise en production.",
@@ -122,6 +146,10 @@ export const experiences: Experience[] = [
   {
     role: "Développeur .NET",
     company: "Cdiscount",
+    logo: {
+      src: "/logos/cdiscount.svg",
+      alt: "Logo Cdiscount",
+    },
     location: "Bordeaux",
     period: "de septembre 2016 à août 2018",
     context:

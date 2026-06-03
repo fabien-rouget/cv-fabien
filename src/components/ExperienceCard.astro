@@ -14,12 +14,18 @@ const compactPeriod = experience.period
 ---
 
 <article class="experience-card">
-  <div class="experience-marker" aria-hidden="true">
-    <span class="experience-dot"></span>
-  </div>
-
   <div class="experience-main">
     <header class="experience-header">
+      <div class="experience-logo-frame">
+        <img
+          class="experience-logo"
+          src={experience.logo.src}
+          alt={experience.logo.alt}
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
       <div class="experience-heading">
         <h3>{experience.role}</h3>
         <p class="experience-meta">

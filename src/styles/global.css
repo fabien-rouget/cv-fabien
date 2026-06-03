@@ -516,29 +516,10 @@ li {
   position: relative;
   display: grid;
   gap: 1rem;
-  padding-left: 1.05rem;
-}
-
-.experience-list::before {
-  content: "";
-  position: absolute;
-  top: 0.65rem;
-  bottom: 0.65rem;
-  left: 0.46rem;
-  width: 1px;
-  background: linear-gradient(
-    180deg,
-    rgba(77, 138, 135, 0),
-    rgba(77, 138, 135, 0.45) 14%,
-    rgba(212, 176, 74, 0.4) 82%,
-    rgba(212, 176, 74, 0)
-  );
 }
 
 .experience-card {
   display: grid;
-  grid-template-columns: 1.55rem minmax(0, 1fr);
-  gap: 0.8rem;
   align-items: start;
   padding: 1.35rem;
   background:
@@ -556,32 +537,41 @@ li {
   position: relative;
 }
 
-.experience-marker {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  padding-top: 0.3rem;
-}
-
-.experience-dot {
-  display: block;
-  width: 0.82rem;
-  height: 0.82rem;
-  border-radius: 999px;
-  border: 3px solid rgba(255, 255, 255, 0.95);
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-secondary));
-  box-shadow:
-    0 0 0 1px rgba(77, 138, 135, 0.18),
-    0 6px 12px rgba(77, 138, 135, 0.12);
-}
-
 .experience-main {
   display: grid;
   gap: 0.9rem;
 }
 
 .experience-header {
-  display: block;
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+}
+
+.experience-logo-frame {
+  display: grid;
+  flex: 0 0 3.15rem;
+  width: 3.15rem;
+  height: 3.15rem;
+  place-items: center;
+  padding: 0.48rem;
+  border: 1px solid rgba(33, 51, 68, 0.1);
+  border-radius: 0.85rem;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.76),
+    0 8px 18px rgba(24, 37, 49, 0.06);
+}
+
+.experience-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.experience-heading {
+  min-width: 0;
+  padding-top: 0.05rem;
 }
 
 .experience-heading h3 {
@@ -817,27 +807,24 @@ li {
     font-size: clamp(1.95rem, 9vw, 2.55rem);
   }
 
-  .experience-list {
-    padding-left: 0;
-  }
-
-  .experience-list::before {
-    display: none;
-  }
-
   .experience-card {
-    grid-template-columns: 1.15rem minmax(0, 1fr);
-    gap: 0.65rem;
     padding: 1rem 0.95rem;
-  }
-
-  .experience-marker {
-    justify-content: center;
-    padding-top: 0.28rem;
   }
 
   .experience-main {
     gap: 0.7rem;
+  }
+
+  .experience-header {
+    gap: 0.7rem;
+  }
+
+  .experience-logo-frame {
+    flex-basis: 2.7rem;
+    width: 2.7rem;
+    height: 2.7rem;
+    padding: 0.42rem;
+    border-radius: 0.75rem;
   }
 
   .experience-meta {
