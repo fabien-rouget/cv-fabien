@@ -28,6 +28,10 @@ export const experiences: Experience[] = [
       "Azure container apps",
       "Jenkins pipeline",
       "Datadogs",
+      "Développement agentique avec l’IA",
+      "Claude Code",
+      "GitHub Copilot",
+      "Cursor",
     ],
   },
   {

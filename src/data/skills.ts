@@ -9,15 +9,15 @@ export const skillCategories: SkillCategory[] = [
     items: ["C#", ".NET", "ASP .NET", "Python", "SQL", "Cypher"],
   },
   {
+    title: "IA",
+    items: ["Claude Code", "Cursor", "Codex", "GitHub Copilot", "Worktrees"],
+  },
+  {
     title: "Base de données",
     items: ["SQL", "MongoDB", "Snowflake", "DBT", "Redis", "Neo4j"],
   },
   {
     title: "Outils et plateformes",
     items: ["RabbitMQ", "Apache Kafka", "AWS Cloud", "Git", "Sonar"],
-  },
-  {
-    title: "Méthodologies",
-    items: ["SCRUM", "Kanban", "CICD", "Testing"],
   },
 ];

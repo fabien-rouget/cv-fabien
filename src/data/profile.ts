@@ -38,6 +38,11 @@ export const profile: Profile = {
       description:
         "Cadrage technique, arbitrage des décisions structurantes, accompagnement des équipes et sécurisation des livraisons."
     },
+    {
+      title: "Développement assisté par l’IA",
+      description:
+        "Usage d’outils IA et de workflows agentiques pour accélérer le développement, l’analyse de code et la livraison.",
+    },
   ],
   personalNotesTitle: "En dehors du code",
   personalNotes: ["Fervent partisan du BÉPO", "Ceinture noire de judo"],
