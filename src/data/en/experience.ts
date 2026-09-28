@@ -49,7 +49,7 @@ export const experiences: Experience[] = [
     ],
     stack: [
       ".NET 6",
-      "Neo4J - Cypher",
+      "Neo4j - Cypher",
       "Redis",
       "SQL Server - MongoDB",
       "RabbitMQ",

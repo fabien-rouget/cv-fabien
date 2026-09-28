@@ -4,7 +4,8 @@ import { getCvData, locales } from "../src/data/index.ts";
 
 const pageWidth = 595.28;
 const pageHeight = 841.89;
-const margin = 42;
+const margin = 34;
+const bottomMargin = 34;
 const contentWidth = pageWidth - margin * 2;
 
 const colors = {
@@ -84,13 +85,13 @@ const estimateParagraphHeight = (text, maxWidth, size, lineHeight, font = "F1") 
   wrapText(text, maxWidth, size, font).length * lineHeight;
 
 const estimateTagsHeight = (items, maxWidth) => {
-  const tagHeight = 15;
-  const gap = 5;
+  const tagHeight = 13.5;
+  const gap = 4.2;
   let rows = 1;
   let cursorX = 0;
 
   for (const item of items) {
-    const width = Math.min(textWidth(item, 7.1, "F2") + 12, maxWidth);
+    const width = Math.min(textWidth(item, 6.8, "F2") + 10.5, maxWidth);
     if (cursorX > 0 && cursorX + width > maxWidth) {
       rows += 1;
       cursorX = 0;
@@ -98,7 +99,7 @@ const estimateTagsHeight = (items, maxWidth) => {
     cursorX += width + gap;
   }
 
-  return rows * (tagHeight + gap) + 8;
+  return rows * (tagHeight + gap) + 4;
 };
 
 const compactPeriod = (period) =>
@@ -113,23 +114,35 @@ const generatePdfForLocale = async (locale) => {
   const outputPath = resolve("public", ui.pdfFilename);
   const photoPath = resolve("public", profile.photo.src.replace(/^\//u, ""));
   const profilePhoto = await readFile(photoPath);
+  const siteUrl = `https://cv.fabien-rouget.fr/${locale}/`;
 
   const pages = [];
   let currentPage;
   let y;
 
   const addPage = () => {
-    currentPage = [];
+    currentPage = { commands: [], links: [] };
     pages.push(currentPage);
     y = pageHeight - margin;
   };
 
   const add = (command) => {
-    currentPage.push(command);
+    currentPage.commands.push(command);
   };
 
-  const drawText = (text, x, baseline, size, { font = "F1", color = colors.text } = {}) => {
+  const addLink = (x, rectY, width, height, uri) => {
+    const x2 = x + width;
+    const y2 = rectY + height;
+    currentPage.links.push(
+      `<< /Type /Annot /Subtype /Link /Rect [${x.toFixed(2)} ${rectY.toFixed(2)} ${x2.toFixed(2)} ${y2.toFixed(2)}] /Border [0 0 0] /A << /Type /Action /S /URI /URI (${pdfText(uri)}) >> >>`
+    );
+  };
+
+  const drawText = (text, x, baseline, size, { font = "F1", color = colors.text, href } = {}) => {
     add(`${colorCommand(color)} BT /${font} ${size.toFixed(2)} Tf 1 0 0 1 ${x.toFixed(2)} ${baseline.toFixed(2)} Tm (${pdfText(text)}) Tj ET\n`);
+    if (href) {
+      addLink(x, baseline - 2, textWidth(text, size, font), size + 3, href);
+    }
   };
 
   const drawLine = (fromX, lineY, toX, color = colors.line) => {
@@ -144,7 +157,7 @@ const generatePdfForLocale = async (locale) => {
     add(`${colorCommand(color)} ${x.toFixed(2)} ${rectY.toFixed(2)} ${width.toFixed(2)} ${height.toFixed(2)} re f\n`);
   };
 
-  const drawDot = (x, dotY, size = 3.2, color = colors.gold) => {
+  const drawDot = (x, dotY, size = 3.0, color = colors.gold) => {
     drawRect(x, dotY, size, size, color);
   };
 
@@ -154,29 +167,28 @@ const generatePdfForLocale = async (locale) => {
 
   const drawFooter = () => {
     const pageNumber = pages.length;
-    drawLine(margin, 32, pageWidth - margin, "#edf1f0");
-    drawText(`${ui.pdfFooterPrefix} ${pageNumber}`, margin, 20, 7.5, { color: colors.soft });
+    drawLine(margin, 26, pageWidth - margin, "#edf1f0");
+    drawText(`${ui.pdfFooterPrefix} ${pageNumber}`, margin, 15, 7.5, { color: colors.soft });
+    const siteLabel = `cv.fabien-rouget.fr/${locale}`;
+    const siteLabelWidth = textWidth(siteLabel, 7.5, "F1");
+    drawText(siteLabel, pageWidth - margin - siteLabelWidth, 15, 7.5, {
+      color: colors.accent,
+      href: siteUrl,
+    });
   };
 
   const ensureSpace = (height) => {
-    if (y - height < margin) {
-      drawFooter();
-      addPage();
-    }
-  };
-
-  const ensureGroupSpace = (height) => {
-    if (y - height < margin) {
+    if (y - height < bottomMargin) {
       drawFooter();
       addPage();
     }
   };
 
   const drawParagraph = (text, x, maxWidth, size, options = {}) => {
-    const lineHeight = options.lineHeight ?? size * 1.45;
+    const lineHeight = options.lineHeight ?? size * 1.38;
     const lines = wrapText(text, maxWidth, size, options.font ?? "F1");
     for (const line of lines) {
-      ensureSpace(lineHeight + 4);
+      ensureSpace(lineHeight + 3);
       drawText(line, x, y, size, options);
       y -= lineHeight;
     }
@@ -184,85 +196,103 @@ const generatePdfForLocale = async (locale) => {
   };
 
   const drawSectionTitle = (title) => {
-    ensureSpace(42);
-    y -= 12;
-    drawText(title, margin, y, 15, { font: "F2", color: colors.accent });
-    y -= 9;
+    ensureSpace(34);
+    y -= 8;
+    drawText(title, margin, y, 13.5, { font: "F2", color: colors.accent });
+    y -= 7;
     drawLine(margin, y, pageWidth - margin, colors.gold);
-    y -= 18;
+    y -= 13;
   };
 
-  const drawTags = (items, x, maxWidth) => {
+  const drawTags = (items, x, maxWidth, startCursorY = y) => {
     let cursorX = x;
-    let cursorY = y;
-    const tagHeight = 15;
-    const gap = 5;
+    let cursorY = startCursorY;
+    const tagHeight = 13.5;
+    const gap = 4.2;
 
     for (const item of items) {
-      const width = Math.min(textWidth(item, 7.1, "F2") + 12, maxWidth);
-      if (cursorX + width > x + maxWidth) {
+      const width = Math.min(textWidth(item, 6.8, "F2") + 10.5, maxWidth);
+      if (cursorX > x && cursorX + width > x + maxWidth) {
         cursorX = x;
         cursorY -= tagHeight + gap;
       }
 
-      ensureSpace(tagHeight + 8);
-      drawRect(cursorX, cursorY - 10, width, tagHeight, "#eef5f4", "#d3e0de");
-      drawText(item, cursorX + 6, cursorY - 5.2, 7.1, { font: "F2", color: colors.accent });
+      drawRect(cursorX, cursorY - 9, width, tagHeight, "#eef5f4", "#d3e0de");
+      drawText(item, cursorX + 5.2, cursorY - 4.6, 6.8, { font: "F2", color: colors.accent });
       cursorX += width + gap;
     }
 
-    y = cursorY - tagHeight - 8;
-  };
-
-  const estimateClosingSectionsHeight = () => {
-    const sectionTitleHeight = 42;
-    const skillsHeight =
-      sectionTitleHeight +
-      skillCategories.reduce(
-        (height, category) => height + 18 + estimateTagsHeight(category.items, contentWidth) + 4,
-        0
-      );
-    const educationHeight = sectionTitleHeight + educationItems.length * 31;
-    const personalNotesHeight = sectionTitleHeight + profile.personalNotes.length * 16;
-
-    return skillsHeight + educationHeight + personalNotesHeight + 12;
+    y = cursorY - tagHeight - 4;
+    return y;
   };
 
   const drawHeader = () => {
-    drawRect(0, pageHeight - 132, pageWidth, 132, "#f2f8f7");
-    drawRect(0, pageHeight - 136, pageWidth, 4, colors.gold);
+    const headerHeight = 114;
+    drawRect(0, pageHeight - headerHeight, pageWidth, headerHeight, "#f2f8f7");
+    drawRect(0, pageHeight - headerHeight - 3.5, pageWidth, 3.5, colors.gold);
 
-    const photoSize = 82;
+    const photoSize = 74;
     const photoX = pageWidth - margin - photoSize;
-    const photoY = pageHeight - margin - photoSize + 1;
-    const textMaxWidth = contentWidth - photoSize - 30;
-    drawRect(photoX - 5, photoY - 5, photoSize + 10, photoSize + 10, "#ffffff", "#dce6e4");
+    const photoY = pageHeight - margin - photoSize + 6;
+    const textMaxWidth = contentWidth - photoSize - 26;
+    drawRect(photoX - 4, photoY - 4, photoSize + 8, photoSize + 8, "#ffffff", "#dce6e4");
     drawImage("Photo", photoX, photoY, photoSize, photoSize);
 
-    drawText(profile.name, margin, y, 28, { font: "F2", color: colors.text });
-    y -= 25;
-    drawText(profile.title, margin, y, 11.5, { font: "F2", color: colors.accent });
-    y -= 18;
-    drawParagraph(profile.heroSummary, margin, textMaxWidth, 10, { color: colors.text, lineHeight: 14 });
+    y = pageHeight - margin + 2;
+    drawText(profile.name, margin, y, 25, { font: "F2", color: colors.text });
+    y -= 21;
+    drawText(profile.title, margin, y, 11, { font: "F2", color: colors.accent });
+    y -= 15;
+    drawParagraph(profile.heroSummary, margin, textMaxWidth, 9.4, { color: colors.text, lineHeight: 12.8 });
 
-    const email = contactLinks.find((link) => link.label === "Email")?.value;
-    const linkedin = contactLinks.find((link) => link.label === "Linkedin")?.href;
-    y -= 4;
-    drawText([email, linkedin].filter(Boolean).join("  |  "), margin, y, 8.5, { color: colors.soft });
-    y -= 26;
+    const emailLink = contactLinks.find((link) => link.label === "Email");
+    const linkedinLink = contactLinks.find((link) => link.label === "Linkedin");
+    y -= 2;
+
+    let contactX = margin;
+    if (emailLink) {
+      drawText(emailLink.value, contactX, y, 8.3, {
+        color: colors.accent,
+        font: "F2",
+        href: emailLink.href,
+      });
+      contactX += textWidth(emailLink.value, 8.3, "F2") + 8;
+      drawText("|", contactX, y, 8.3, { color: colors.soft });
+      contactX += 10;
+    }
+
+    if (linkedinLink) {
+      const cleanLinkedin = linkedinLink.href.replace(/^https?:\/\/(www\.)?/i, "").replace(/\/$/u, "");
+      drawText(cleanLinkedin, contactX, y, 8.3, {
+        color: colors.accent,
+        font: "F2",
+        href: linkedinLink.href,
+      });
+      contactX += textWidth(cleanLinkedin, 8.3, "F2") + 8;
+      drawText("|", contactX, y, 8.3, { color: colors.soft });
+      contactX += 10;
+    }
+
+    drawText(`cv.fabien-rouget.fr/${locale}`, contactX, y, 8.3, {
+      color: colors.accent,
+      font: "F2",
+      href: siteUrl,
+    });
+
+    y = pageHeight - headerHeight - 10;
   };
 
   const drawExpertise = () => {
     drawSectionTitle(profile.valueTitle);
-    const columnGap = 18;
+    const columnGap = 14;
     const columnWidth = (contentWidth - columnGap) / 2;
-    const cardHeight = 72;
-    const rowGap = 12;
+    const cardHeight = 58;
+    const rowGap = 9;
     const rowHeight = cardHeight + rowGap;
     const rowCount = Math.ceil(profile.strengths.length / 2);
-    const startY = y;
+    const startY = y + 2;
 
-    ensureSpace(rowCount * rowHeight + 6);
+    ensureSpace(rowCount * rowHeight + 4);
 
     profile.strengths.forEach((strength, index) => {
       const column = index % 2;
@@ -272,97 +302,130 @@ const generatePdfForLocale = async (locale) => {
 
       drawRect(x, blockY - cardHeight, columnWidth, cardHeight, colors.surface, "#dce6e4");
       drawRect(x, blockY - cardHeight, 3, cardHeight, colors.gold);
-      drawText(strength.title, x + 12, blockY - 16, 9.5, { font: "F2", color: colors.text });
+      drawText(strength.title, x + 11, blockY - 14, 9.2, { font: "F2", color: colors.text });
       const previousY = y;
-      y = blockY - 33;
-      drawParagraph(strength.description, x + 12, columnWidth - 24, 8.2, { color: colors.soft, lineHeight: 10.8 });
+      y = blockY - 28;
+      drawParagraph(strength.description, x + 11, columnWidth - 20, 8.0, {
+        color: colors.soft,
+        lineHeight: 10.4,
+      });
       y = previousY;
     });
 
-    y = startY - rowCount * rowHeight - 4;
+    y = startY - rowCount * rowHeight - 2;
   };
 
   const estimateExperienceHeight = (experience) => {
-    const innerWidth = contentWidth - 26;
-    const contextHeight = estimateParagraphHeight(experience.context, innerWidth, 9, 12.5);
+    const innerWidth = contentWidth - 24;
+    const contextHeight = estimateParagraphHeight(experience.context, innerWidth, 8.6, 11.4);
     const impactsHeight = experience.impacts.reduce(
-      (height, impact) => height + estimateParagraphHeight(impact, innerWidth - 16, 8.8, 12.5) + 1,
+      (height, impact) => height + estimateParagraphHeight(impact, innerWidth - 14, 8.4, 11.2) + 1,
       0
     );
-    const tagsHeight = estimateTagsHeight(experience.stack, innerWidth - 16);
+    const tagsHeight = estimateTagsHeight(experience.stack, innerWidth - 14);
 
-    return 24 + 13 + 13 + contextHeight + 5 + impactsHeight + tagsHeight + 10;
+    return 18 + 11.5 + 11.5 + contextHeight + 3 + impactsHeight + tagsHeight + 7;
   };
 
   const drawExperience = (experience) => {
     const cardHeight = estimateExperienceHeight(experience);
-    ensureSpace(cardHeight + 12);
+    ensureSpace(cardHeight + 8);
 
-    const cardTop = y + 4;
+    const cardTop = y + 3;
     const cardX = margin;
     const cardWidth = contentWidth;
-    const innerX = cardX + 13;
-    const innerWidth = cardWidth - 26;
+    const innerX = cardX + 12;
+    const innerWidth = cardWidth - 24;
 
     drawRect(cardX, cardTop - cardHeight, cardWidth, cardHeight, colors.surfaceStrong, "#dfe8e6");
     drawRect(cardX, cardTop - cardHeight, 3, cardHeight, colors.gold);
 
-    y = cardTop - 18;
-    drawText(experience.role, innerX, y, 12.7, { font: "F2", color: colors.text });
-    y -= 13;
-    drawText(`${experience.company} - ${experience.location} - ${compactPeriod(experience.period)}`, innerX, y, 8.8, {
+    y = cardTop - 15;
+    drawText(experience.role, innerX, y, 11.5, { font: "F2", color: colors.text });
+    y -= 11.5;
+    drawText(`${experience.company} - ${experience.location} - ${compactPeriod(experience.period)}`, innerX, y, 8.4, {
       font: "F2",
       color: colors.soft,
     });
-    y -= 13;
-    drawParagraph(experience.context, innerX, innerWidth, 9, { color: colors.soft, lineHeight: 12.5 });
-    y -= 4;
+    y -= 11.5;
+    drawParagraph(experience.context, innerX, innerWidth, 8.6, { color: colors.soft, lineHeight: 11.4 });
+    y -= 3;
 
     for (const impact of experience.impacts) {
-      ensureSpace(18);
-      drawDot(innerX + 2, y + 3.2, 2.8);
-      drawParagraph(impact, innerX + 15, innerWidth - 15, 8.8, { color: colors.text, lineHeight: 12.5 });
+      ensureSpace(14);
+      drawDot(innerX + 2, y + 2.8, 2.6);
+      drawParagraph(impact, innerX + 13, innerWidth - 13, 8.4, { color: colors.text, lineHeight: 11.2 });
       y -= 1;
     }
 
-    drawTags(experience.stack, innerX + 16, innerWidth - 16);
-    y = cardTop - cardHeight - 8;
+    drawTags(experience.stack, innerX + 13, innerWidth - 13);
+    y = cardTop - cardHeight - 5.5;
   };
 
   const drawSkills = () => {
     drawSectionTitle(ui.skillsTitle);
-    for (const category of skillCategories) {
-      ensureSpace(48);
-      drawText(category.title, margin, y, 10.5, { font: "F2", color: colors.text });
-      y -= 18;
-      drawTags(category.items, margin, contentWidth);
-      y -= 4;
+    const columnGap = 16;
+    const columnWidth = (contentWidth - columnGap) / 2;
+    const rowCount = Math.ceil(skillCategories.length / 2);
+
+    for (let row = 0; row < rowCount; row += 1) {
+      const leftCat = skillCategories[row * 2];
+      const rightCat = skillCategories[row * 2 + 1];
+      const leftHeight = leftCat ? 14 + estimateTagsHeight(leftCat.items, columnWidth) : 0;
+      const rightHeight = rightCat ? 14 + estimateTagsHeight(rightCat.items, columnWidth) : 0;
+      const rowHeight = Math.max(leftHeight, rightHeight);
+
+      ensureSpace(rowHeight + 6);
+      const rowStartY = y;
+
+      if (leftCat) {
+        drawText(leftCat.title, margin, rowStartY, 9.5, { font: "F2", color: colors.text });
+        drawTags(leftCat.items, margin, columnWidth, rowStartY - 14);
+      }
+
+      if (rightCat) {
+        const rightX = margin + columnWidth + columnGap;
+        drawText(rightCat.title, rightX, rowStartY, 9.5, { font: "F2", color: colors.text });
+        drawTags(rightCat.items, rightX, columnWidth, rowStartY - 14);
+      }
+
+      y = rowStartY - rowHeight - 4;
     }
   };
 
-  const drawEducation = () => {
-    drawSectionTitle(ui.educationTitle);
+  const drawEducationAndNotes = () => {
+    const columnGap = 20;
+    const leftWidth = contentWidth * 0.58;
+    const rightWidth = contentWidth - leftWidth - columnGap;
+    const rightX = margin + leftWidth + columnGap;
+
+    const neededHeight = 34 + Math.max(educationItems.length * 28, profile.personalNotes.length * 16);
+    ensureSpace(neededHeight);
+
+    y -= 8;
+    const titleY = y;
+    drawText(ui.educationTitle, margin, titleY, 13.5, { font: "F2", color: colors.accent });
+    drawText(profile.personalNotesTitle, rightX, titleY, 13.5, { font: "F2", color: colors.accent });
+    const lineY = titleY - 7;
+    drawLine(margin, lineY, margin + leftWidth, colors.gold);
+    drawLine(rightX, lineY, pageWidth - margin, colors.gold);
+
+    let leftY = lineY - 14;
     for (const item of educationItems) {
-      ensureSpace(34);
-      drawText(item.degree, margin, y, 10.5, { font: "F2", color: colors.text });
-      y -= 13;
-      drawText(item.details, margin, y, 9, { color: colors.soft });
-      y -= 18;
+      drawText(item.degree, margin, leftY, 9.5, { font: "F2", color: colors.text });
+      leftY -= 12;
+      drawText(item.details, margin, leftY, 8.5, { color: colors.soft });
+      leftY -= 15;
     }
 
-    drawSectionTitle(profile.personalNotesTitle);
+    let rightY = lineY - 14;
     for (const note of profile.personalNotes) {
-      ensureSpace(18);
-      drawDot(margin + 5, y + 3.2, 3);
-      drawText(note, margin + 16, y, 9, { color: colors.text });
-      y -= 16;
+      drawDot(rightX + 2, rightY + 2.8, 2.8);
+      drawText(note, rightX + 12, rightY, 8.8, { color: colors.text });
+      rightY -= 15;
     }
-  };
 
-  const drawClosingSections = () => {
-    ensureGroupSpace(estimateClosingSectionsHeight());
-    drawSkills();
-    drawEducation();
+    y = Math.min(leftY, rightY);
   };
 
   const buildPdf = () => {
@@ -374,7 +437,7 @@ const generatePdfForLocale = async (locale) => {
     const pageIds = [];
     const contentIds = [];
     pages.forEach((page, index) => {
-      const content = Buffer.from(page.join(""), "latin1");
+      const content = Buffer.from(page.commands.join(""), "latin1");
       const contentId = 6 + index * 2;
       const pageId = contentId + 1;
       contentIds.push(contentId);
@@ -387,9 +450,10 @@ const generatePdfForLocale = async (locale) => {
           Buffer.from("\nendstream", "latin1"),
         ])
       );
+      const annotsEntry = page.links.length > 0 ? ` /Annots [${page.links.join(" ")}]` : "";
       addObject(
         pageId,
-        `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${pageWidth} ${pageHeight}] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> /XObject << /Photo 5 0 R >> >> /Contents ${contentId} 0 R >>`
+        `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${pageWidth} ${pageHeight}] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> /XObject << /Photo 5 0 R >> >> /Contents ${contentId} 0 R${annotsEntry} >>`
       );
     });
 
@@ -441,13 +505,14 @@ const generatePdfForLocale = async (locale) => {
   drawExpertise();
   drawSectionTitle(ui.experiencesTitle);
   experiences.forEach(drawExperience);
-  drawClosingSections();
+  drawSkills();
+  drawEducationAndNotes();
   drawFooter();
 
   await mkdir(dirname(outputPath), { recursive: true });
   await writeFile(outputPath, buildPdf());
 
-  console.log(`PDF generated (${locale}): ${outputPath}`);
+  console.log(`PDF generated (${locale}, ${pages.length} pages): ${outputPath}`);
 };
 
 for (const locale of locales) {

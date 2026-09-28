@@ -84,8 +84,10 @@ cv-fabien/
    - Vérifier le rendu de `public/cv-fabien-rouget-en.pdf` et `public/cv-fabien-rouget-fr.pdf` et les inclure dans le commit Git.
 
 ### B. Particularités et contraintes du générateur PDF (`scripts/generate-pdf.mjs`)
-Le script `scripts/generate-pdf.mjs` génère des fichiers `%PDF-1.4` bas niveau sans dépendance externe :
+Le script `scripts/generate-pdf.mjs` génère des fichiers `%PDF-1.4` bas niveau (sur **2 pages**) sans dépendance externe :
 - **Boucle multi-langues** : Appelle `generatePdfForLocale(locale)` pour chaque langue de `locales` (`["en", "fr"]`).
+- **Liens cliquables (`/Annot /Subtype /Link`)** : L'email (`mailto:`), le profil LinkedIn et l'URL du site (`cv.fabien-rouget.fr/en` ou `/fr`) dans l'en-tête et le pied de page sont enrichis d'annotations PDF cliquables via `addLink()`.
+- **Mise en page 2 pages** : *Compétences / Skills* est disposé en grille 2×2 et *Formations / Education* + *En dehors du code / Beyond the code* sont placés côte à côte sur 2 colonnes afin que l'intégralité du CV tienne sur 2 pages équilibrées.
 - **Encodage & Caractères spéciaux** : Utilise `WinAnsiEncoding` (`latin1`) avec les polices standard PDF `/Helvetica` (`F1`) et `/Helvetica-Bold` (`F2`). La fonction `sanitize()` convertit les caractères typographiques (`’` -> `'`, `→` -> `->`, `œ` -> `oe`, `µ` -> `micro`, `…` -> `...`) et supprime tout caractère hors plage Latin-1.
 - **Photo de profil** : L'image `public/images/fabien-rouget.jpeg` est intégrée directement sous forme de flux JPEG brut (`/Filter /DCTDecode`) avec des dimensions codées en dur (`/Width 400 /Height 400`). Si la photo change de format (ex. PNG) ou de dimensions, il faut adapter l'objet PDF n°5 dans `buildPdf()`.
 - **Formatage des périodes (`compactPeriod`)** : Transforme `"de X à Y"` (FR) et `"from X to Y"` (EN) en `"X -> Y"` dans le PDF (et `"X → Y"` sur le web dans `ExperienceCard.astro`).
