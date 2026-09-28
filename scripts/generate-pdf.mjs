@@ -196,12 +196,12 @@ const generatePdfForLocale = async (locale) => {
   };
 
   const drawSectionTitle = (title) => {
-    ensureSpace(34);
-    y -= 8;
-    drawText(title, margin, y, 13.5, { font: "F2", color: colors.accent });
-    y -= 7;
+    ensureSpace(44);
+    y -= 20;
+    drawText(title, margin, y, 14, { font: "F2", color: colors.accent });
+    y -= 7.5;
     drawLine(margin, y, pageWidth - margin, colors.gold);
-    y -= 13;
+    y -= 15;
   };
 
   const drawTags = (items, x, maxWidth, startCursorY = y) => {
@@ -279,7 +279,7 @@ const generatePdfForLocale = async (locale) => {
       href: siteUrl,
     });
 
-    y = pageHeight - headerHeight - 10;
+    y = pageHeight - headerHeight - 4;
   };
 
   const drawExpertise = () => {
@@ -312,7 +312,7 @@ const generatePdfForLocale = async (locale) => {
       y = previousY;
     });
 
-    y = startY - rowCount * rowHeight - 2;
+    y = startY - rowCount * rowHeight + rowGap - 6;
   };
 
   const estimateExperienceHeight = (experience) => {
@@ -359,10 +359,11 @@ const generatePdfForLocale = async (locale) => {
     }
 
     drawTags(experience.stack, innerX + 13, innerWidth - 13);
-    y = cardTop - cardHeight - 5.5;
+    y = cardTop - cardHeight - 8;
   };
 
   const drawSkills = () => {
+    y -= 4;
     drawSectionTitle(ui.skillsTitle);
     const columnGap = 16;
     const columnWidth = (contentWidth - columnGap) / 2;
@@ -371,25 +372,25 @@ const generatePdfForLocale = async (locale) => {
     for (let row = 0; row < rowCount; row += 1) {
       const leftCat = skillCategories[row * 2];
       const rightCat = skillCategories[row * 2 + 1];
-      const leftHeight = leftCat ? 14 + estimateTagsHeight(leftCat.items, columnWidth) : 0;
-      const rightHeight = rightCat ? 14 + estimateTagsHeight(rightCat.items, columnWidth) : 0;
+      const leftHeight = leftCat ? 16 + estimateTagsHeight(leftCat.items, columnWidth) : 0;
+      const rightHeight = rightCat ? 16 + estimateTagsHeight(rightCat.items, columnWidth) : 0;
       const rowHeight = Math.max(leftHeight, rightHeight);
 
-      ensureSpace(rowHeight + 6);
+      ensureSpace(rowHeight + 10);
       const rowStartY = y;
 
       if (leftCat) {
         drawText(leftCat.title, margin, rowStartY, 9.5, { font: "F2", color: colors.text });
-        drawTags(leftCat.items, margin, columnWidth, rowStartY - 14);
+        drawTags(leftCat.items, margin, columnWidth, rowStartY - 16);
       }
 
       if (rightCat) {
         const rightX = margin + columnWidth + columnGap;
         drawText(rightCat.title, rightX, rowStartY, 9.5, { font: "F2", color: colors.text });
-        drawTags(rightCat.items, rightX, columnWidth, rowStartY - 14);
+        drawTags(rightCat.items, rightX, columnWidth, rowStartY - 16);
       }
 
-      y = rowStartY - rowHeight - 4;
+      y = rowStartY - rowHeight - 10;
     }
   };
 
@@ -399,30 +400,30 @@ const generatePdfForLocale = async (locale) => {
     const rightWidth = contentWidth - leftWidth - columnGap;
     const rightX = margin + leftWidth + columnGap;
 
-    const neededHeight = 34 + Math.max(educationItems.length * 28, profile.personalNotes.length * 16);
+    const neededHeight = 44 + Math.max(educationItems.length * 28, profile.personalNotes.length * 16);
     ensureSpace(neededHeight);
 
-    y -= 8;
+    y -= 14;
     const titleY = y;
-    drawText(ui.educationTitle, margin, titleY, 13.5, { font: "F2", color: colors.accent });
-    drawText(profile.personalNotesTitle, rightX, titleY, 13.5, { font: "F2", color: colors.accent });
-    const lineY = titleY - 7;
+    drawText(ui.educationTitle, margin, titleY, 14, { font: "F2", color: colors.accent });
+    drawText(profile.personalNotesTitle, rightX, titleY, 14, { font: "F2", color: colors.accent });
+    const lineY = titleY - 7.5;
     drawLine(margin, lineY, margin + leftWidth, colors.gold);
     drawLine(rightX, lineY, pageWidth - margin, colors.gold);
 
-    let leftY = lineY - 14;
+    let leftY = lineY - 15;
     for (const item of educationItems) {
       drawText(item.degree, margin, leftY, 9.5, { font: "F2", color: colors.text });
-      leftY -= 12;
+      leftY -= 12.5;
       drawText(item.details, margin, leftY, 8.5, { color: colors.soft });
-      leftY -= 15;
+      leftY -= 16;
     }
 
-    let rightY = lineY - 14;
+    let rightY = lineY - 15;
     for (const note of profile.personalNotes) {
       drawDot(rightX + 2, rightY + 2.8, 2.8);
       drawText(note, rightX + 12, rightY, 8.8, { color: colors.text });
-      rightY -= 15;
+      rightY -= 16;
     }
 
     y = Math.min(leftY, rightY);
