@@ -1,21 +1,4 @@
-export interface Profile {
-  name: string;
-  title: string;
-  email: string;
-  heroSummary: string;
-  photo: {
-    src: string;
-    alt: string;
-  };
-  intro: string;
-  valueTitle: string;
-  strengths: Array<{
-    title: string;
-    description: string;
-  }>;
-  personalNotesTitle: string;
-  personalNotes: string[];
-}
+import type { Profile } from "../types.ts";
 
 export const profile: Profile = {
   name: "Fabien Rouget",
@@ -44,7 +27,7 @@ export const profile: Profile = {
     {
       title: "Cadrage et accompagnement technique",
       description:
-        "Cadrage technique, arbitrage des décisions structurantes, accompagnement des équipes et sécurisation des livraisons."
+        "Cadrage technique, arbitrage des décisions structurantes, accompagnement des équipes et sécurisation des livraisons.",
     },
     {
       title: "Développement assisté par l’IA",

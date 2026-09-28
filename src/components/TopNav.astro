@@ -1,4 +1,6 @@
 ---
+import type { Locale } from "../data/types";
+
 interface NavItem {
   href: string;
   label: string;
@@ -6,12 +8,20 @@ interface NavItem {
 
 interface Props {
   items: NavItem[];
+  locale: Locale;
+  navAriaLabel: string;
+  languageSwitchAriaLabel: string;
 }
 
-const { items } = Astro.props;
+const { items, locale, navAriaLabel, languageSwitchAriaLabel } = Astro.props;
+const basePath = import.meta.env.BASE_URL;
+const languageLinks: Array<{ code: Locale; label: string; href: string }> = [
+  { code: "en", label: "EN", href: `${basePath}en/` },
+  { code: "fr", label: "FR", href: `${basePath}fr/` },
+];
 ---
 
-<nav class="page-nav" aria-label="Navigation des sections">
+<nav class="page-nav" aria-label={navAriaLabel}>
   <ul class="page-nav-list">
     {items.map((item) => (
       <li>
@@ -21,4 +31,17 @@ const { items } = Astro.props;
       </li>
     ))}
   </ul>
+
+  <div class="lang-switch" role="group" aria-label={languageSwitchAriaLabel}>
+    {languageLinks.map((lang) => (
+      <a
+        class:list={["lang-switch-link", { "is-active": lang.code === locale }]}
+        href={lang.href}
+        lang={lang.code}
+        aria-current={lang.code === locale ? "page" : undefined}
+      >
+        {lang.label}
+      </a>
+    ))}
+  </div>
 </nav>

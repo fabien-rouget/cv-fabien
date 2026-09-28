@@ -1,16 +1,4 @@
-export interface Experience {
-  role: string;
-  company: string;
-  logo: {
-    src: string;
-    alt: string;
-  };
-  location: string;
-  period: string;
-  context: string;
-  impacts: string[];
-  stack: string[];
-}
+import type { Experience } from "../types.ts";
 
 export const experiences: Experience[] = [
   {
@@ -160,5 +148,5 @@ export const experiences: Experience[] = [
       "Adaptation des frontaux pour assurer une transition sans rupture fonctionnelle.",
     ],
     stack: ["TFS - .NET framework - WCF", "SQL Server", "Sonar - Kanban"],
-  }
+  },
 ];

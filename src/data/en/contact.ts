@@ -1,10 +1,4 @@
-export interface ContactLink {
-  label: string;
-  value: string;
-  href: string;
-  external?: boolean;
-  download?: string;
-}
+import type { ContactLink } from "../types.ts";
 
 export const contactLinks: ContactLink[] = [
   {
@@ -14,14 +8,14 @@ export const contactLinks: ContactLink[] = [
   },
   {
     label: "Linkedin",
-    value: "Linkedin",
+    value: "LinkedIn",
     href: "https://www.linkedin.com/in/fabien-rouget/",
     external: true,
   },
   {
     label: "PDF",
-    value: "Télécharger le CV",
-    href: "/cv-fabien-rouget.pdf",
-    download: "Fabien_Rouget_CV.pdf",
+    value: "Download CV",
+    href: "/cv-fabien-rouget-en.pdf",
+    download: "Fabien_Rouget_CV_EN.pdf",
   },
 ];

@@ -1,79 +1,30 @@
 ---
-import ExperienceCard from "../components/ExperienceCard.astro";
-import Hero from "../components/Hero.astro";
-import Section from "../components/Section.astro";
-import SkillGroup from "../components/SkillGroup.astro";
-import TopNav from "../components/TopNav.astro";
-import { contactLinks } from "../data/contact";
-import { educationItems } from "../data/education";
-import { experiences } from "../data/experience";
-import MainLayout from "../layouts/MainLayout.astro";
-import { profile } from "../data/profile";
-import { skillCategories } from "../data/skills";
+import { getCvData } from "../data/index";
 
-const seoDescription = profile.intro;
-const navigationItems = [
-  { href: "#top", label: "Profil" },
-  { href: "#presentation", label: profile.valueTitle },
-  { href: "#experiences", label: "Expériences" },
-  { href: "#competences", label: "Compétences" },
-  { href: "#formations", label: "Formations" },
-];
+const { profile } = getCvData("en");
+const targetUrl = `${import.meta.env.BASE_URL}en/`;
+const canonicalUrl = Astro.site ? new URL(targetUrl, Astro.site).toString() : targetUrl;
 ---
 
-<MainLayout title={`${profile.name} - ${profile.title}`} description={seoDescription}>
-  <main class="page">
-    <TopNav items={navigationItems} />
-    <Hero profile={profile} contactLinks={contactLinks} />
-
-    <Section id="presentation" title={profile.valueTitle}>
-      <div class="strength-grid">
-        {profile.strengths.map((strength) => (
-          <article class="strength-card">
-            <h3>{strength.title}</h3>
-            <p>{strength.description}</p>
-          </article>
-        ))}
-      </div>
-    </Section>
-
-    <Section id="experiences" title="Expériences">
-      <div class="experience-list">
-        {experiences.map((experience) => <ExperienceCard experience={experience} />)}
-      </div>
-    </Section>
-
-    <Section
-      id="competences"
-      title="Compétences"
-    >
-      <div class="skills-grid">
-        {skillCategories.map((category) => <SkillGroup category={category} />)}
-      </div>
-    </Section>
-
-    <div class="closing-grid">
-      <Section id="formations" title="Formations">
-        <div class="education-list">
-          {educationItems.map((item) => (
-            <article class="education-card">
-              <h3>{item.degree}</h3>
-              <p>{item.details}</p>
-            </article>
-          ))}
-        </div>
-      </Section>
-
-      <aside class="section compact-aside" aria-labelledby="infos-title">
-        <div class="section-heading compact-heading">
-          <h2 id="infos-title">{profile.personalNotesTitle}</h2>
-        </div>
-
-        <ul class="bullet-list">
-          {profile.personalNotes.map((note) => <li>{note}</li>)}
-        </ul>
-      </aside>
-    </div>
-
-  </main>
-</MainLayout>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{`${profile.name} - ${profile.title}`}</title>
+    <meta name="description" content={profile.intro} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta http-equiv="refresh" content={`0;url=${targetUrl}`} />
+    <style>
+      html,
+      body {
+        margin: 0;
+        background: #f7f4ee;
+      }
+    </style>
+    <script is:inline define:vars={{ targetUrl }}>
+      window.location.replace(targetUrl + window.location.search + window.location.hash);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,16 +1,16 @@
 ---
-import type { ContactLink } from "../data/contact";
-import type { Profile } from "../data/profile";
+import type { ContactLink, Profile, UiLabels } from "../data/types";
 
 interface Props {
   contactLinks: ContactLink[];
   profile: Profile;
+  ui: UiLabels;
 }
 
-const { contactLinks, profile } = Astro.props;
-const getActionLabel = (link: ContactLink) => (link.label === "Email" ? "Me contacter" : link.value);
+const { contactLinks, profile, ui } = Astro.props;
+const getActionLabel = (link: ContactLink) => (link.label === "Email" ? ui.contactAction : link.value);
 const getAriaLabel = (link: ContactLink) =>
-  link.label === "Email" ? `Me contacter par email à ${link.value}` : link.value;
+  link.label === "Email" ? `${ui.contactActionAriaPrefix} ${link.value}` : link.value;
 const getHref = (link: ContactLink) =>
   link.href.startsWith("/") ? `${import.meta.env.BASE_URL}${link.href.slice(1)}` : link.href;
 const getAssetHref = (path: string) =>

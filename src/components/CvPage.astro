@@ -1,0 +1,84 @@
+---
+import ExperienceCard from "./ExperienceCard.astro";
+import Hero from "./Hero.astro";
+import Section from "./Section.astro";
+import SkillGroup from "./SkillGroup.astro";
+import TopNav from "./TopNav.astro";
+import { getCvData } from "../data/index";
+import type { Locale } from "../data/types";
+import MainLayout from "../layouts/MainLayout.astro";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const { profile, contactLinks, experiences, skillCategories, educationItems, ui } = getCvData(locale);
+
+const seoDescription = profile.intro;
+const navigationItems = [
+  { href: "#top", label: ui.profileNav },
+  { href: "#presentation", label: profile.valueTitle },
+  { href: "#experiences", label: ui.experiencesTitle },
+  { href: "#competences", label: ui.skillsTitle },
+  { href: "#formations", label: ui.educationTitle },
+];
+---
+
+<MainLayout locale={locale} title={`${profile.name} - ${profile.title}`} description={seoDescription}>
+  <main class="page">
+    <TopNav
+      items={navigationItems}
+      locale={locale}
+      navAriaLabel={ui.navAriaLabel}
+      languageSwitchAriaLabel={ui.languageSwitchAriaLabel}
+    />
+    <Hero profile={profile} contactLinks={contactLinks} ui={ui} />
+
+    <Section id="presentation" title={profile.valueTitle}>
+      <div class="strength-grid">
+        {profile.strengths.map((strength) => (
+          <article class="strength-card">
+            <h3>{strength.title}</h3>
+            <p>{strength.description}</p>
+          </article>
+        ))}
+      </div>
+    </Section>
+
+    <Section id="experiences" title={ui.experiencesTitle}>
+      <div class="experience-list">
+        {experiences.map((experience) => <ExperienceCard experience={experience} />)}
+      </div>
+    </Section>
+
+    <Section id="competences" title={ui.skillsTitle}>
+      <div class="skills-grid">
+        {skillCategories.map((category) => <SkillGroup category={category} />)}
+      </div>
+    </Section>
+
+    <div class="closing-grid">
+      <Section id="formations" title={ui.educationTitle}>
+        <div class="education-list">
+          {educationItems.map((item) => (
+            <article class="education-card">
+              <h3>{item.degree}</h3>
+              <p>{item.details}</p>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      <aside class="section compact-aside" aria-labelledby="infos-title">
+        <div class="section-heading compact-heading">
+          <h2 id="infos-title">{profile.personalNotesTitle}</h2>
+        </div>
+
+        <ul class="bullet-list">
+          {profile.personalNotes.map((note) => <li>{note}</li>)}
+        </ul>
+      </aside>
+    </div>
+  </main>
+</MainLayout>

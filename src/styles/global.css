@@ -128,6 +128,10 @@ li {
   position: sticky;
   top: 0.75rem;
   z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
   margin-bottom: 1rem;
   padding: 0.6rem;
   border: 1px solid rgba(255, 255, 255, 0.72);
@@ -176,11 +180,48 @@ li {
 .page-nav-link:focus-visible {
   background: var(--color-accent-soft);
   border-color: rgba(77, 138, 135, 0.14);
+  transform: translateY(-1px);
 }
 
-.page-nav-link:hover,
-.page-nav-link:focus-visible {
-  transform: translateY(-1px);
+.lang-switch {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.22rem;
+  border-radius: 999px;
+  border: 1px solid rgba(33, 51, 68, 0.1);
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.lang-switch-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.3rem;
+  min-height: 2rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  color: var(--color-text-soft);
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.lang-switch-link:hover,
+.lang-switch-link:focus-visible {
+  color: var(--color-accent-strong);
+}
+
+.lang-switch-link.is-active {
+  background: var(--color-accent-strong);
+  color: #ffffff;
+  box-shadow: 0 6px 14px rgba(33, 51, 68, 0.16);
 }
 
 .hero {
@@ -812,19 +853,15 @@ li {
 
   .page-nav {
     top: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem;
     padding: 0.5rem;
     border-radius: 1.25rem;
   }
 
   .page-nav-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.45rem;
-    overflow-x: visible;
-  }
-
-  .page-nav-list > li:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
+    display: contents;
   }
 
   .page-nav-link {
@@ -834,6 +871,17 @@ li {
     font-size: 0.95rem;
     line-height: 1.2;
     white-space: normal;
+  }
+
+  .lang-switch {
+    justify-self: stretch;
+    justify-content: center;
+    min-height: 2.6rem;
+  }
+
+  .lang-switch-link {
+    flex: 1;
+    min-height: 2.1rem;
   }
 
   .hero h1 {

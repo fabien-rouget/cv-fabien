@@ -1,23 +1,20 @@
-export interface SkillCategory {
-  title: string;
-  items: string[];
-}
+import type { SkillCategory } from "../types.ts";
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: "Langages et frameworks",
+    title: "Languages & Frameworks",
     items: ["C#", ".NET", "ASP .NET", "Python", "SQL", "Cypher"],
   },
   {
-    title: "IA",
+    title: "AI",
     items: ["Claude Code", "Cursor", "Codex", "GitHub Copilot", "Worktrees"],
   },
   {
-    title: "Base de données",
+    title: "Databases",
     items: ["SQL", "MongoDB", "Snowflake", "DBT", "Redis", "Neo4j"],
   },
   {
-    title: "Outils et plateformes",
+    title: "Tools & Platforms",
     items: ["RabbitMQ", "Apache Kafka", "AWS Cloud", "Git", "Sonar"],
   },
 ];
