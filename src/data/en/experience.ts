@@ -96,7 +96,7 @@ export const experiences: Experience[] = [
     period: "from January 2021 to January 2022",
     startDate: "2021-01",
     endDate: "2022-01",
-    context: "Built a Big Data platform from data collection to data exposure.",
+    context: "Development of a Big Data platform, from data collection to data exposure.",
     impacts: [
       "Built the end-to-end ETL pipeline to ensure reliable data flows.",
       "Deployed a cloud architecture on AWS to industrialize the platform.",
@@ -155,8 +155,8 @@ export const experiences: Experience[] = [
       "Product catalog migration to a new data model and redesign of associated systems.",
     impacts: [
       "Designed and implemented the databases for the new data model.",
-      "Evolved web services to expose and operate the product repository.",
-      "Adapted front-end integrations to ensure a seamless transition.",
+      "Enhanced web services to expose and leverage the product catalog.",
+      "Adapted front-end applications to ensure a seamless transition with no functional disruption.",
     ],
     stack: ["TFS - .NET Framework - WCF", "SQL Server", "Sonar - Kanban"],
   },

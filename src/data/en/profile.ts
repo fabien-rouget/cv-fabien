@@ -22,7 +22,7 @@ export const profile: Profile = {
     {
       title: "Architecture & Software Quality",
       description:
-        "Design of evolutionary architectures with a strong focus on software quality, testing, observability, and performance.",
+        "Design and implementation of scalable, maintainable architectures with a strong focus on software quality, testing, observability, and performance.",
     },
     {
       title: "Technical Leadership & Scoping",
