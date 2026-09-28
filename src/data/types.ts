@@ -36,6 +36,8 @@ export interface Experience {
   };
   location: string;
   period: string;
+  startDate: string;
+  endDate?: string;
   context: string;
   impacts: string[];
   stack: string[];

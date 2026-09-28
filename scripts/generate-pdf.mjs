@@ -1,6 +1,6 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
-import { getCvData, locales } from "../src/data/index.ts";
+import { formatExperienceDuration, getCvData, locales } from "../src/data/index.ts";
 
 const pageWidth = 595.28;
 const pageHeight = 841.89;
@@ -29,12 +29,13 @@ const sanitize = (value) =>
     .replace(/[’‘]/g, "'")
     .replace(/[“”]/g, '"')
     .replace(/[–—]/g, "-")
+    .replace(/•/g, "\x95")
     .replace(/→/g, "->")
     .replace(/œ/g, "oe")
     .replace(/Œ/g, "OE")
     .replace(/µ/g, "micro")
     .replace(/…/g, "...")
-    .replace(/[^\x09\x0A\x0D\x20-\x7E\xA0-\xFF]/g, "");
+    .replace(/[^\x09\x0A\x0D\x20-\x7E\x95\xA0-\xFF]/g, "");
 
 const pdfText = (value) =>
   sanitize(value)
@@ -343,10 +344,17 @@ const generatePdfForLocale = async (locale) => {
     y = cardTop - 15;
     drawText(experience.role, innerX, y, 11.5, { font: "F2", color: colors.text });
     y -= 11.5;
-    drawText(`${experience.company} - ${experience.location} - ${compactPeriod(experience.period)}`, innerX, y, 8.4, {
-      font: "F2",
-      color: colors.soft,
-    });
+    const duration = formatExperienceDuration(experience.startDate, experience.endDate, locale);
+    drawText(
+      `${experience.company} - ${experience.location} - ${compactPeriod(experience.period)} (${duration})`,
+      innerX,
+      y,
+      8.4,
+      {
+        font: "F2",
+        color: colors.soft,
+      }
+    );
     y -= 11.5;
     drawParagraph(experience.context, innerX, innerWidth, 8.6, { color: colors.soft, lineHeight: 11.4 });
     y -= 3;
@@ -439,7 +447,7 @@ const generatePdfForLocale = async (locale) => {
     const contentIds = [];
     pages.forEach((page, index) => {
       const content = Buffer.from(page.commands.join(""), "latin1");
-      const contentId = 6 + index * 2;
+      const contentId = 7 + index * 2;
       const pageId = contentId + 1;
       contentIds.push(contentId);
       pageIds.push(pageId);
@@ -473,6 +481,11 @@ const generatePdfForLocale = async (locale) => {
         Buffer.from("\nendstream", "latin1"),
       ])
     );
+    const keywords = skillCategories.flatMap((cat) => cat.items).join(", ");
+    addObject(
+      6,
+      `<< /Title (${pdfText(`${profile.name} - ${profile.title}`)}) /Author (${pdfText(profile.name)}) /Subject (${pdfText(profile.heroSummary)}) /Keywords (${pdfText(keywords)}) /Creator (cv.fabien-rouget.fr) /Producer (cv.fabien-rouget.fr) >>`
+    );
 
     const chunks = [Buffer.from("%PDF-1.4\n%\xE2\xE3\xCF\xD3\n", "latin1")];
     const offsets = [0];
@@ -491,7 +504,7 @@ const generatePdfForLocale = async (locale) => {
       "0000000000 65535 f ",
       ...offsets.slice(1).map((offset) => `${String(offset).padStart(10, "0")} 00000 n `),
       "trailer",
-      `<< /Size ${objects.length} /Root 1 0 R >>`,
+      `<< /Size ${objects.length} /Root 1 0 R /Info 6 0 R >>`,
       "startxref",
       String(startXref),
       "%%EOF",

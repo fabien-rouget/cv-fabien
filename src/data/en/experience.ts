@@ -10,6 +10,7 @@ export const experiences: Experience[] = [
     },
     location: "Bordeaux",
     period: "from May 2025 to Present",
+    startDate: "2025-05",
     context:
       "Redesign of the transaction management service into a distributed multi-service architecture.",
     impacts: [
@@ -39,6 +40,8 @@ export const experiences: Experience[] = [
     },
     location: "Bordeaux",
     period: "from March 2023 to May 2025",
+    startDate: "2023-03",
+    endDate: "2025-05",
     context: "Design of subscription validation controls and a graph pipeline for fraud detection.",
     impacts: [
       "Designed and shipped validation APIs integrated into the customer subscription flow.",
@@ -65,6 +68,8 @@ export const experiences: Experience[] = [
     },
     location: "Bordeaux",
     period: "from January 2022 to March 2023",
+    startDate: "2022-01",
+    endDate: "2023-03",
     context:
       "Redesign of a user activity collection and aggregation pipeline.",
     impacts: [
@@ -89,6 +94,8 @@ export const experiences: Experience[] = [
     },
     location: "Paris",
     period: "from January 2021 to January 2022",
+    startDate: "2021-01",
+    endDate: "2022-01",
     context: "Built a Big Data platform from data collection to data exposure.",
     impacts: [
       "Built the end-to-end ETL pipeline to ensure reliable data flows.",
@@ -111,6 +118,8 @@ export const experiences: Experience[] = [
     },
     location: "Bordeaux",
     period: "from August 2018 to December 2020",
+    startDate: "2018-08",
+    endDate: "2021-01",
     context: "Technical leadership of e-commerce backend services, from architecture to production.",
     impacts: [
       "Designed the microservices architecture for the Octopia product catalog.",
@@ -140,6 +149,8 @@ export const experiences: Experience[] = [
     },
     location: "Bordeaux",
     period: "from September 2016 to August 2018",
+    startDate: "2016-09",
+    endDate: "2018-09",
     context:
       "Product catalog migration to a new data model and redesign of associated systems.",
     impacts: [

@@ -39,7 +39,7 @@ cv-fabien/
 │   ├── CNAME                    # Domaine personnalisé : cv.fabien-rouget.fr
 │   ├── cv-fabien-rouget-en.pdf  # CV PDF anglais généré par `npm run pdf`
 │   ├── cv-fabien-rouget-fr.pdf  # CV PDF français généré par `npm run pdf`
-│   ├── favicon.ico / favicon.svg
+│   ├── favicon.svg              # Favicon vectorielle sur-mesure (monogramme FR)
 │   ├── images/
 │   │   └── fabien-rouget.jpeg   # Photo de profil (400x400, JPEG) utilisée sur le site ET dans les PDF
 │   └── logos/                   # Logos entreprises (betclic.svg, floa.png, believe.svg, cdiscount.svg + ATTRIBUTIONS.md)
@@ -48,7 +48,7 @@ cv-fabien/
 ├── src/
 │   ├── data/                    # SOURCE DE VÉRITÉ UNIQUE (partagée par le site Astro et les PDF)
 │   │   ├── types.ts             # Interfaces TypeScript partagées (Locale, Profile, ContactLink, Experience, SkillCategory, Education, UiLabels)
-│   │   ├── index.ts             # Point d'entrée `getCvData(locale)` et dictionnaire des libellés d'interface (`uiByLocale`)
+│   │   ├── index.ts             # Point d'entrée `getCvData(locale)`, calcul de durée `formatExperienceDuration()` et libellés `uiByLocale`
 │   │   ├── en/                  # Données du CV en anglais (profile.ts, contact.ts, experience.ts, skills.ts, education.ts)
 │   │   └── fr/                  # Données du CV en français (profile.ts, contact.ts, experience.ts, skills.ts, education.ts)
 │   ├── layouts/
@@ -56,9 +56,9 @@ cv-fabien/
 │   ├── components/
 │   │   ├── CvPage.astro         # Composant de page complet paramétré par `locale: "en" | "fr"`
 │   │   ├── TopNav.astro         # Barre de navigation sticky par ancres + sélecteur de langue `EN | FR`
-│   │   ├── Hero.astro           # En-tête : nom, titre, accroche, boutons de contact/PDF, photo de profil
+│   │   ├── Hero.astro           # En-tête : nom, titre, accroche, boutons de contact/PDF avec icônes SVG, photo de profil
 │   │   ├── Section.astro        # Conteneur générique de section (`<section id=... aria-labelledby=...>`)
-│   │   ├── ExperienceCard.astro # Carte d'expérience : logo, rôle, méta (société, lieu, période compactée), contexte, impacts, TagList
+│   │   ├── ExperienceCard.astro # Carte d'expérience : logo, rôle, méta (société, lieu, période compactée + durée), contexte, impacts, TagList
 │   │   ├── SkillGroup.astro     # Carte de catégorie de compétences + TagList
 │   │   └── TagList.astro        # Liste de badges/pills (`<ul class="tag-list"><li class="tag">...`)
 │   ├── pages/
@@ -78,19 +78,20 @@ cv-fabien/
 
 ### A. Modifier le contenu du CV (Textes, Expériences, Compétences, Formations)
 1. **Modifier les fichiers dans `src/data/en/` et `src/data/fr/`** (`profile.ts`, `experience.ts`, `skills.ts`, `education.ts`, `contact.ts`). Toute modification de structure doit respecter les interfaces de `src/data/types.ts` et être répercutée dans les deux langues.
-2. **Libellés d'interface (titres de sections, boutons)** : Centralisés dans `uiByLocale` au sein de `src/data/index.ts`.
-3. **Régénérer les PDF après une modification de `src/data/`** :
+2. **Calcul des durées d'expériences** : Chaque expérience possède `startDate: "YYYY-MM"` et un `endDate?: "YYYY-MM"` optionnel (omis pour l'expérience en cours afin que sa durée soit calculée dynamiquement via `formatExperienceDuration()` dans `src/data/index.ts`).
+3. **Libellés d'interface (titres de sections, boutons)** : Centralisés dans `uiByLocale` au sein de `src/data/index.ts`.
+4. **Régénérer les PDF après une modification de `src/data/`** :
    - Lancer `npm run pdf` (ou `npm run build`, qui enchaîne automatiquement `npm run pdf && astro build`).
    - Vérifier le rendu de `public/cv-fabien-rouget-en.pdf` et `public/cv-fabien-rouget-fr.pdf` et les inclure dans le commit Git.
 
 ### B. Particularités et contraintes du générateur PDF (`scripts/generate-pdf.mjs`)
 Le script `scripts/generate-pdf.mjs` génère des fichiers `%PDF-1.4` bas niveau (sur **2 pages**) sans dépendance externe :
 - **Boucle multi-langues** : Appelle `generatePdfForLocale(locale)` pour chaque langue de `locales` (`["en", "fr"]`).
-- **Liens cliquables (`/Annot /Subtype /Link`)** : L'email (`mailto:`), le profil LinkedIn et l'URL du site (`cv.fabien-rouget.fr/en` ou `/fr`) dans l'en-tête et le pied de page sont enrichis d'annotations PDF cliquables via `addLink()`.
+- **Liens cliquables (`/Annot /Subtype /Link`) & Métadonnées (`/Info`)** : L'email (`mailto:`), le profil LinkedIn et l'URL du site (`cv.fabien-rouget.fr/en` ou `/fr`) dans l'en-tête et le pied de page sont enrichis d'annotations PDF cliquables via `addLink()`. L'objet PDF n°6 renseigne `/Title`, `/Author`, `/Subject` et `/Keywords` pour les lecteurs PDF et ATS.
 - **Mise en page 2 pages** : *Compétences / Skills* est disposé en grille 2×2 et *Formations / Education* + *En dehors du code / Beyond the code* sont placés côte à côte sur 2 colonnes afin que l'intégralité du CV tienne sur 2 pages équilibrées.
-- **Encodage & Caractères spéciaux** : Utilise `WinAnsiEncoding` (`latin1`) avec les polices standard PDF `/Helvetica` (`F1`) et `/Helvetica-Bold` (`F2`). La fonction `sanitize()` convertit les caractères typographiques (`’` -> `'`, `→` -> `->`, `œ` -> `oe`, `µ` -> `micro`, `…` -> `...`) et supprime tout caractère hors plage Latin-1.
+- **Encodage & Caractères spéciaux** : Utilise `WinAnsiEncoding` (`latin1`) avec les polices standard PDF `/Helvetica` (`F1`) et `/Helvetica-Bold` (`F2`). La fonction `sanitize()` convertit les caractères typographiques (`•` -> `\x95`, `’` -> `'`, `→` -> `->`, `œ` -> `oe`, `µ` -> `micro`, `…` -> `...`) et supprime tout caractère hors plage Latin-1.
 - **Photo de profil** : L'image `public/images/fabien-rouget.jpeg` est intégrée directement sous forme de flux JPEG brut (`/Filter /DCTDecode`) avec des dimensions codées en dur (`/Width 400 /Height 400`). Si la photo change de format (ex. PNG) ou de dimensions, il faut adapter l'objet PDF n°5 dans `buildPdf()`.
-- **Formatage des périodes (`compactPeriod`)** : Transforme `"de X à Y"` (FR) et `"from X to Y"` (EN) en `"X -> Y"` dans le PDF (et `"X → Y"` sur le web dans `ExperienceCard.astro`).
+- **Formatage des périodes (`compactPeriod`)** : Transforme `"de X à Y"` (FR) et `"from X to Y"` (EN) en `"X -> Y"` dans le PDF (et `"X → Y"` sur le web dans `ExperienceCard.astro`), suivi de la durée entre parenthèses.
 
 ### C. Design System & Styles (`src/styles/global.css`)
 - **Palette** : Thème clair uniquement (`color-scheme: light`), fond chaud (`#f7f4ee` -> `#edf3f0`), texte principal `#1c2733`, accent principal bleu-vert `#406f74` (`--color-accent`), accent fort `#213344`, accent secondaire doré `#c7a34b` (`--color-accent-secondary`).

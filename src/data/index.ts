@@ -79,3 +79,29 @@ export const cvDataByLocale: Record<Locale, CvData> = {
 export const locales: Locale[] = ["en", "fr"];
 
 export const getCvData = (locale: Locale): CvData => cvDataByLocale[locale];
+
+export const formatExperienceDuration = (
+  startDate: string,
+  endDate: string | undefined,
+  locale: Locale,
+  now: Date = new Date()
+): string => {
+  const [startYear, startMonth] = startDate.split("-").map(Number);
+  const [endYear, endMonth] = endDate
+    ? endDate.split("-").map(Number)
+    : [now.getFullYear(), now.getMonth() + 1];
+
+  const totalMonths = Math.max(1, (endYear - startYear) * 12 + (endMonth - startMonth));
+  const years = Math.floor(totalMonths / 12);
+  const months = totalMonths % 12;
+
+  if (locale === "fr") {
+    const yearPart = years > 0 ? `${years} ${years > 1 ? "ans" : "an"}` : "";
+    const monthPart = months > 0 ? `${months} mois` : "";
+    return [yearPart, monthPart].filter(Boolean).join(" ");
+  }
+
+  const yearPart = years > 0 ? `${years} ${years > 1 ? "yrs" : "yr"}` : "";
+  const monthPart = months > 0 ? `${months} ${months > 1 ? "mos" : "mo"}` : "";
+  return [yearPart, monthPart].filter(Boolean).join(" ");
+};

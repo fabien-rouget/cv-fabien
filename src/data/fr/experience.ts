@@ -10,6 +10,7 @@ export const experiences: Experience[] = [
     },
     location: "Bordeaux",
     period: "de mai 2025 à aujourd’hui",
+    startDate: "2025-05",
     context:
       "Refonte du service de gestion des transactions vers une architecture distribuée multi-services.",
     impacts: [
@@ -39,6 +40,8 @@ export const experiences: Experience[] = [
     },
     location: "Bordeaux",
     period: "de mars 2023 à mai 2025",
+    startDate: "2023-03",
+    endDate: "2025-05",
     context: "Conception de contrôles de souscription et d’un pipeline graphe pour la détection de fraude.",
     impacts: [
       "Conception et mise en production d’API de contrôle intégrées au parcours de souscription.",
@@ -65,6 +68,8 @@ export const experiences: Experience[] = [
     },
     location: "Bordeaux",
     period: "de janvier 2022 à mars 2023",
+    startDate: "2022-01",
+    endDate: "2023-03",
     context:
       "Refonte d’un pipeline de collecte et d’agrégation des actions utilisateurs.",
     impacts: [
@@ -89,6 +94,8 @@ export const experiences: Experience[] = [
     },
     location: "Paris",
     period: "de janvier 2021 à janvier 2022",
+    startDate: "2021-01",
+    endDate: "2022-01",
     context: "Construction d’une plateforme Big Data de la collecte à l’exposition des données.",
     impacts: [
       "Construction de la chaîne ETL de bout en bout pour fiabiliser les flux de données.",
@@ -111,6 +118,8 @@ export const experiences: Experience[] = [
     },
     location: "Bordeaux",
     period: "d’août 2018 à décembre 2020",
+    startDate: "2018-08",
+    endDate: "2021-01",
     context: "Pilotage technique de services backend e-commerce, de l’architecture à la mise en production.",
     impacts: [
       "Conception de l’architecture microservices du référentiel produit Octopia.",
@@ -140,6 +149,8 @@ export const experiences: Experience[] = [
     },
     location: "Bordeaux",
     period: "de septembre 2016 à août 2018",
+    startDate: "2016-09",
+    endDate: "2018-09",
     context:
       "Migration du catalogue produit vers un nouveau modèle de données et refonte des systèmes associés.",
     impacts: [

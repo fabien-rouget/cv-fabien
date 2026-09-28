@@ -1,12 +1,14 @@
 ---
-import type { Experience } from "../data/types";
+import { formatExperienceDuration } from "../data/index";
+import type { Experience, Locale } from "../data/types";
 import TagList from "./TagList.astro";
 
 interface Props {
   experience: Experience;
+  locale: Locale;
 }
 
-const { experience } = Astro.props;
+const { experience, locale } = Astro.props;
 const getAssetHref = (path: string) =>
   path.startsWith("/") ? `${import.meta.env.BASE_URL}${path.slice(1)}` : path;
 const compactPeriod = experience.period
@@ -14,6 +16,7 @@ const compactPeriod = experience.period
   .replace(/^de\s+/i, "")
   .replace(/^from\s+/i, "")
   .replace(/\s+(?:à|to)\s+/i, " → ");
+const duration = formatExperienceDuration(experience.startDate, experience.endDate, locale);
 ---
 
 <article class="experience-card">
@@ -24,6 +27,8 @@ const compactPeriod = experience.period
           class="experience-logo"
           src={getAssetHref(experience.logo.src)}
           alt={experience.logo.alt}
+          width="64"
+          height="64"
           loading="lazy"
           decoding="async"
         />
@@ -34,7 +39,7 @@ const compactPeriod = experience.period
         <p class="experience-meta">
           <span class="experience-company">{experience.company}</span>
           <span class="experience-location"> — {experience.location}</span>
-          <span class="experience-period"> · {compactPeriod}</span>
+          <span class="experience-period"> · {compactPeriod} ({duration})</span>
         </p>
         <p class="experience-kicker">{experience.context}</p>
       </div>

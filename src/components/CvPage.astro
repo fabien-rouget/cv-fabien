@@ -48,7 +48,7 @@ const navigationItems = [
 
     <Section id="experiences" title={ui.experiencesTitle}>
       <div class="experience-list">
-        {experiences.map((experience) => <ExperienceCard experience={experience} />)}
+        {experiences.map((experience) => <ExperienceCard experience={experience} locale={locale} />)}
       </div>
     </Section>
 
