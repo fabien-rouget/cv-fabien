@@ -823,6 +823,10 @@ li {
     overflow-x: visible;
   }
 
+  .page-nav-list > li:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
   .page-nav-link {
     width: 100%;
     min-height: 2.6rem;

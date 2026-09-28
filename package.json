@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "npm run pdf && astro build",
     "pdf": "node --experimental-strip-types scripts/generate-pdf.mjs",
     "preview": "astro preview",
     "astro": "astro"

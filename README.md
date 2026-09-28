@@ -19,56 +19,29 @@ npm run build
 npm run preview
 ```
 
-La commande `npm run pdf` régénère le fichier statique `public/cv-fabien-rouget.pdf`, utilisé par le bouton de téléchargement du site.
+La commande `npm run pdf` régénère le fichier statique `public/cv-fabien-rouget.pdf` à partir des données de `src/data/*.ts`. Elle est également exécutée automatiquement lors de `npm run build`.
+
+## Documentation & Architecture
+
+Voir [`AGENTS.md`](./AGENTS.md) pour la cartographie complète du code, le fonctionnement du générateur PDF et les règles d'évolution.
 
 ## Publication GitHub Pages
 
-Le projet est préparé pour une future publication via GitHub Pages avec le domaine personnalisé :
+Le site est publié automatiquement sur GitHub Pages avec le domaine personnalisé :
 
 ```text
 https://cv.fabien-rouget.fr
 ```
 
-### Ce qui est déjà en place
+### Configuration en place
 
-- `astro.config.mjs`
-  - `site` pointe sur `https://cv.fabien-rouget.fr`
-  - `base` vaut `/` par défaut, ce qui est le bon comportement pour un sous-domaine personnalisé
-- `.github/workflows/deploy.yml`
-  - workflow GitHub Actions basé sur l’action officielle Astro
-  - build sur `main`
-  - déploiement via GitHub Pages
-- `public/CNAME`
-  - contient `cv.fabien-rouget.fr`
-
-### Base path
-
-Pour le domaine personnalisé prévu, aucun `base path` supplémentaire n’est nécessaire.
-
-Si un jour tu republies ce site sous un sous-chemin de type `https://fabienrouget.github.io/cv-fabien/`, tu peux tester ou builder avec :
-
-```bash
-PUBLIC_BASE_PATH=/cv-fabien/ npm run build
-```
-
-Le fichier `astro.config.mjs` normalise automatiquement cette valeur.
-
-### Mise en ligne le moment venu
-
-1. Pousser le projet sur GitHub.
-2. Dans `Settings > Pages`, choisir `GitHub Actions` comme source.
-3. Dans la même page, renseigner le domaine personnalisé `cv.fabien-rouget.fr`.
-4. Chez le fournisseur DNS, créer un enregistrement `CNAME` :
-
-```text
-cv.fabien-rouget.fr -> fabienrouget.github.io
-```
-
-5. Une fois le domaine validé par GitHub Pages, activer HTTPS.
+- `astro.config.mjs` : `site` pointe sur `https://cv.fabien-rouget.fr`
+- `.github/workflows/deploy.yml` : workflow GitHub Actions basé sur l’action officielle Astro (`withastro/action@v6`), exécuté à chaque push sur `main`
+- `public/CNAME` : contient `cv.fabien-rouget.fr`
 
 ## Vérification production
 
-Le build de production se vérifie localement avec :
+Le build complet (régénération du PDF + compilation Astro) se vérifie localement avec :
 
 ```bash
 npm run build

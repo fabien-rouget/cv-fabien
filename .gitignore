@@ -37,16 +37,3 @@ pnpm-debug.log*
 # local extraction / preview artifacts
 .quicklook-output/
 tmp-source-cv.pdf
-
-# accidental git metadata copied to the repo root
-/FETCH_HEAD
-/HEAD
-/config
-/description
-/hooks/
-/index
-/info/
-/logs/
-/objects/
-/packed-refs
-/refs/
